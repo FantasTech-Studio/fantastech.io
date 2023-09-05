@@ -1,0 +1,30 @@
+.navbar {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 12px;
+    padding-left: 12px;
+    user-select: none;
+
+    backdrop-filter: blur(5px);
+    // background-color: blue;
+
+    .sections {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+
+        a {
+            cursor: pointer;
+            outline: none;
+        }
+    }
+}
+
