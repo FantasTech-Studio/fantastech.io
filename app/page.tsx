@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { FaHome } from "react-icons/fa";
 
@@ -12,6 +13,7 @@ export default function Home() {
         ]} />
         <Hero />
         <About />
+        <Services />
       </div>
     </main>
   );
