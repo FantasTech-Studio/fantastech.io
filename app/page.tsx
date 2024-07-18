@@ -9,7 +9,10 @@ export default function Home() {
     <main className="relative bg-black flex justify-center items-center flex-col overflow-hidden mx-auto w-full">
       <div className="w-full">
         <FloatingNav navItems={[
-          { name: 'Home', link: '/', icon: <FaHome /> }
+          { name: 'Home', link: '/', icon: <FaHome /> },
+          { name: 'Services', link: '/', icon: <FaHome /> },
+          { name: 'Portfolio', link: '/', icon: <FaHome /> },
+          { name: 'Contact Us', link: '/', icon: <FaHome /> }
         ]} />
         <Hero />
         <About />
