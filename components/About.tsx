@@ -40,7 +40,7 @@ const About = () => {
 		<section id='about' className='bg-white dark:bg-black-100 py-20 w-full'>
 	  		<div className='w-full px-4'>
 				<div className='grid grid-cols-1 md:grid-cols-2 gap-8 w-full'>
-		  			{/* Columna Izquierda */}
+		  			
 		  			<div className='h-[10rem] flex justify-center items-center w-full pl-20'>
 						<div className="text-4xl mx-auto font-normal text-neutral-600 dark:text-neutral-400 w-full">
 			  				Build
@@ -48,13 +48,12 @@ const About = () => {
 							websites with FantasTech
 						</div>
 		  			</div>
-		  			{/* Columna Derecha */}
+		  			
 		  			<div className='flex flex-col justify-center items-start w-full pr-24'>
 						<p className='text-lg md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-400 mb-6 w-full'>
 						At FantasTech we are agile, innovative and daring. We are experts in developing smart solutions that generate value from the first moment they are used and can scale with you and your business, regardless of your starting point.
 						</p>
 						<div className='flex flex-col justify-center items-start w-full'>
-			  			{/* Aquí puedes colocar cualquier otro elemento que desees debajo del párrafo */}
 			  				<div className="flex flex-row items-center mb-10 w-full">
 								<AnimatedTooltip items={people} />
 							</div>
