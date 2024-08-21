@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import { FloatingNav } from "@/components/ui/FloatingNav";
@@ -20,6 +21,7 @@ export default function Home() {
         <About />
         <Services />
         <Contact />
+        <Footer />
       </div>
     </main>
   );
