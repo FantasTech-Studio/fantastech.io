@@ -118,11 +118,11 @@ export function FeaturesSectionDemo() {
     return (
       <div className="h-60 md:h-60  flex flex-col items-center lg:items-start relative bg-transparent dark:bg-transparent mt-4">
         <Link href="https://doc.clickup.com/9006076676/d/h/8ccvmr4-2417/eebc811d1ea7802" target="__blank">
-            <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
-                <span className="absolute inset-0 overflow-hidden rounded-full">
+            <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-lg p-px text-xs font-semibold leading-6  text-white inline-block">
+                <span className="absolute inset-0 overflow-hidden rounded-lg">
                     <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 </span>
-                <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
+                <div className="relative flex space-x-2 items-center z-10 rounded-lg bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
                     <span>
                         Ver posiciones abiertas
                     </span>
@@ -174,8 +174,8 @@ export function FeaturesSectionDemo() {
         glowColor: [1, 1, 1],
         markers: [
           // longitude latitude
-          { location: [37.7595, -122.4367], size: 0.03 },
-          { location: [40.7128, -74.006], size: 0.1 },
+          { location: [45.46427, 9.18951], size: 0.05 },
+          { location: [14.64072, -90.51327], size: 0.05 },
         ],
         onRender: (state) => {
           state.phi = phi;
