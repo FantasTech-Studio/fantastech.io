@@ -70,7 +70,7 @@ export function FeaturesSectionDemo() {
   
   const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
     return (
-      <p className=" max-w-5xl mx-auto text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug">
+      <p className=" max-w-5xl mx-auto text-center lg:text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug">
         {children}
       </p>
     );
@@ -82,7 +82,7 @@ export function FeaturesSectionDemo() {
         className={cn(
           "text-sm md:text-base  max-w-4xl text-left mx-auto",
           "text-neutral-500 text-center font-normal dark:text-neutral-300",
-          "text-left max-w-sm mx-0 md:text-sm my-2"
+          "text-center lg:text-left max-w-sm mx-0 md:text-sm my-2"
         )}
       >
         {children}
@@ -94,16 +94,18 @@ export function FeaturesSectionDemo() {
   
   export const SkeletonOne = () => {
     return (
-        <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
-            <div className="flex flex-1 w-full h-full flex-col space-y-2 relative mt-4">
-                <button className="w-1/2 px-8 py-4 rounded-lg relative bg-slate-700 text-white hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-slate-600 hover:scale-105 mb-3">
-                    <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
-                    <span className="relative z-20">
-                        Agenda una reunión
-                    </span>
-                </button>
+        <div className="w-full mx-auto bg-transparent dark:bg-transparent group h-full">
+            <div className="flex flex-1 w-full h-full flex-col space-y-2 relative mt-4 lg:items-start items-center">
+                <Link href="https://cal.com/fantastech" target="__blank">
+                    <button className=" px-8 py-2 lg:py-4 rounded-lg relative bg-slate-700 text-white hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-slate-600 hover:scale-105 mb-3">
+                        <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
+                        <span className="relative z-20">
+                            Agenda una reunión
+                        </span>
+                    </button>
+                </Link>
                 <Link href="https://wa.me/50223117721" target="__blank">
-                    <button className="w-1/2 px-12 py-4 rounded-lg bg-[#1ED760] text-white tracking-widest transform hover:scale-105 hover:bg-[#21e065] transition-colors duration-200">
+                    <button className="px-[4.3rem] py-2 lg:py-4 rounded-lg bg-[#1ED760] text-white transform hover:scale-105 hover:bg-[#21e065] transition-colors duration-200">
                         WhatsApp
                     </button>
                 </Link>
@@ -114,7 +116,36 @@ export function FeaturesSectionDemo() {
   
   export const SkeletonTwo = () => {
     return (
-      <div className="h-60 md:h-60  flex flex-col items-center relative bg-transparent dark:bg-transparent mt-10">
+      <div className="h-60 md:h-60  flex flex-col items-center lg:items-start relative bg-transparent dark:bg-transparent mt-4">
+        <Link href="https://doc.clickup.com/9006076676/d/h/8ccvmr4-2417/eebc811d1ea7802" target="__blank">
+            <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
+                <span className="absolute inset-0 overflow-hidden rounded-full">
+                    <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                </span>
+                <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
+                    <span>
+                        Ver posiciones abiertas
+                    </span>
+                    <svg
+                        fill="none"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M10.75 8.75L14.25 12L10.75 15.25"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="1.5"
+                        />
+                    </svg>
+                </div>
+                <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
+            </button>
+        </Link>
+
         <Globe className="absolute -right-40 md:-right-40 -bottom-80 md:-bottom-72" />
       </div>
     );
