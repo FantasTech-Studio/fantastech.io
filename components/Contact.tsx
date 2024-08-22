@@ -94,25 +94,21 @@ export function FeaturesSectionDemo() {
   
   export const SkeletonOne = () => {
     return (
-      <Link
-        href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
-        target="__blank"
-        className="relative flex gap-10  h-full group/image"
-      >
         <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
-          <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
-            {/* TODO */}
-            {/* <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " /> */}
-            {/* <Image
-              src="https://assets.aceternity.com/fireship.jpg"
-              alt="header"
-              width={800}
-              height={800}
-              className="h-full w-full aspect-square object-cover object-center rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
-            /> */}
-          </div>
+            <div className="flex flex-1 w-full h-full flex-col space-y-2 relative mt-4">
+                <button className="w-1/2 px-8 py-4 rounded-lg relative bg-slate-700 text-white hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-slate-600 hover:scale-105 mb-3">
+                    <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
+                    <span className="relative z-20">
+                        Agenda una reunión
+                    </span>
+                </button>
+                <Link href="https://wa.me/50223117721" target="__blank">
+                    <button className="w-1/2 px-12 py-4 rounded-lg bg-[#1ED760] text-white tracking-widest transform hover:scale-105 hover:bg-[#21e065] transition-colors duration-200">
+                        WhatsApp
+                    </button>
+                </Link>
+            </div>
         </div>
-      </Link>
     );
   };
   

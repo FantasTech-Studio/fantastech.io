@@ -62,7 +62,7 @@ const Services = () => {
 					Nuestros servicios
 				</motion.h1>
 			</LampContainer>
-			<div className="max-w-7xl mx-auto px-8 -mt-72">
+			<div className="max-w-7xl mx-auto px-8 -mt-[25rem]">
 				<HoverEffect items={services} />
 			</div>
 			
