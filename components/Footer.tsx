@@ -30,7 +30,7 @@ export function Footer() {
 		},
 		{
 			title: "Trabaja con nosotros",
-			href: "#",
+			href: "https://doc.clickup.com/9006076676/d/h/8ccvmr4-2417/eebc811d1ea7802",
 		},
 		{
 			title: "Políticas de privacidad",

@@ -34,7 +34,7 @@ const Hero = () => {
                     Impulsando tu negocio con tecnología de vanguardia
                 </p>
 
-                <a href='#about'>
+                <a href='#services'>
                     <MagicButton
                         title='Descubre nuestros servicios'
                         icon={<IoRocketSharp />}

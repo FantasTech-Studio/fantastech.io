@@ -35,7 +35,7 @@ export function FeaturesSectionDemo() {
           </h4>
   
           <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-            Desde la idea hasta la ejecución, en FantasTech convertimos tu visión en soluciones tecnológicas innovadoras que impulsan el crecimiento de tu negocio.
+            Desde la idea hasta la ejecución, en Fantastech convertimos tu visión en soluciones tecnológicas innovadoras que impulsan el crecimiento de tu negocio.
           </p>
         </div>
   
