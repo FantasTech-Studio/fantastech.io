@@ -1,5 +1,6 @@
 module.exports = {
-    images: {
-      domains: ['images.unsplash.com'],
-    },
-  }
+  output: 'export',
+  images: {
+    domains: ['images.unsplash.com'],
+  },
+}
