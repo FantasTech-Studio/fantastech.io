@@ -7,7 +7,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FantasTech",
+  title: "Fantastech",
   description: "Fantastic solutions for smart businesses",
 };
 
