@@ -13,96 +13,91 @@ import React from "react";
 import { useLanguage } from '@/context/LanguageContext';
 
 export function Footer() {
-	try {
-		const { t, isLoading } = useLanguage();
+  const { t, isLoading } = useLanguage();
 
-		if (isLoading) {
-			return <div className="w-full py-20 text-center">Loading...</div>;
-		}
+  if (isLoading) {
+    return <div className="w-full py-20 text-center">Loading...</div>;
+  }
 
-		const pages = [
-			{
-				title: t('footer.about'),
-				href: "#about",
-			},
-			{
-				title: t('footer.services'),
-				href: "#services",
-			},
-			{
-				title: t('footer.clients'),
-				href: "#",
-			},
-			{
-				title: t('footer.contact'),
-				href: "#contact",
-			},
-			{
-				title: t('footer.work_with_us'),
-				href: "https://doc.clickup.com/9006076676/d/h/8ccvmr4-2417/eebc811d1ea7802",
-			},
-			{
-				title: t('footer.privacy_policy'),
-				href: "#",
-			},
-			{
-				title: t('footer.terms_conditios'),
-				href: "#",
-			},
-  	];
+  const pages = [
+    {
+      title: t('footer.about'),
+      href: "#about",
+    },
+    {
+      title: t('footer.services'),
+      href: "#services",
+    },
+    {
+      title: t('footer.clients'),
+      href: "#",
+    },
+    {
+      title: t('footer.contact'),
+      href: "#contact",
+    },
+    {
+      title: t('footer.work_with_us'),
+      href: "https://doc.clickup.com/9006076676/d/h/8ccvmr4-2417/eebc811d1ea7802",
+    },
+    {
+      title: t('footer.privacy_policy'),
+      href: "#",
+    },
+    {
+      title: t('footer.terms_conditios'),
+      href: "#",
+    },
+  ];
 
-	return (
-		<div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-20 bg-white dark:bg-black-100 w-full relative overflow-hidden">
-			<div className="max-w-7xl mx-auto text-sm text-neutral-500 justify-between items-start md:px-8">
-				<div className="flex flex-col items-center justify-center w-full relative">
-					<div className="mr-0 md:mr-4  md:flex mb-4">
-						<Logo />
-					</div>
+  return (
+    <div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-20 bg-white dark:bg-black-100 w-full relative overflow-hidden">
+      <div className="max-w-7xl mx-auto text-sm text-neutral-500 justify-between items-start md:px-8">
+        <div className="flex flex-col items-center justify-center w-full relative">
+          <div className="mr-0 md:mr-4  md:flex mb-4">
+            <Logo />
+          </div>
 
-					<ul className="transition-colors flex sm:flex-row flex-col hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 list-none gap-4">
-						{pages.map((page, idx) => (
-						<li key={"pages" + idx} className="list-none text-center">
-							<Link
-							className="transition-colors hover:text-text-neutral-800 "
-							href={page.href}
-							>
-							{page.title}
-							</Link>
-						</li>
-						))}
-					</ul>
+          <ul className="transition-colors flex sm:flex-row flex-col hover:text-text-neutral-800 text-neutral-600 dark:text-neutral-300 list-none gap-4">
+            {pages.map((page, idx) => (
+            <li key={"pages" + idx} className="list-none text-center">
+              <Link
+              className="transition-colors hover:text-text-neutral-800 "
+              href={page.href}
+              >
+              {page.title}
+              </Link>
+            </li>
+            ))}
+          </ul>
 
-					<GridLineHorizontal className="max-w-7xl mx-auto mt-8" />
-				</div>
-				<div className="flex sm:flex-row flex-col justify-between mt-8 items-center w-full">
-					<p className="text-neutral-500 dark:text-neutral-400 mb-8 sm:mb-0">
-						{t('footer.copyright')}
-					</p>
-					<div className="flex gap-4">
-						{/* <Link href="#" target="_blank" rel="noopener noreferrer">
-						<IconBrandTwitter className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
-						</Link> */}
-						<Link href="https://www.linkedin.com/company/fantastechdev" target="_blank" rel="noopener noreferrer">
-						<IconBrandLinkedin className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
-						</Link>
-						<Link href="https://github.com/FantasTech-Studio" target="_blank" rel="noopener noreferrer">
-						<IconBrandGithub className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
-						</Link>
-						<Link href="https://www.facebook.com/fantastechdev" target="_blank" rel="noopener noreferrer">
-						<IconBrandFacebook className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
-						</Link>
-						<Link href="https://www.instagram.com/fantastechdev" target="_blank" rel="noopener noreferrer">
-						<IconBrandInstagram className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
-						</Link>
-					</div>
-				</div>
-			</div>
-		</div>
-  	);
-	} catch (error) {
-		console.error('Error in Footer:', error);
-		return <div className="w-full py-20 text-center">Error loading footer</div>;
-	}
+          <GridLineHorizontal className="max-w-7xl mx-auto mt-8" />
+        </div>
+        <div className="flex sm:flex-row flex-col justify-between mt-8 items-center w-full">
+          <p className="text-neutral-500 dark:text-neutral-400 mb-8 sm:mb-0">
+            {t('footer.copyright')}
+          </p>
+          <div className="flex gap-4">
+            {/* <Link href="#" target="_blank" rel="noopener noreferrer">
+            <IconBrandTwitter className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
+            </Link> */}
+            <Link href="https://www.linkedin.com/company/fantastechdev" target="_blank" rel="noopener noreferrer">
+            <IconBrandLinkedin className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
+            </Link>
+            <Link href="https://github.com/FantasTech-Studio" target="_blank" rel="noopener noreferrer">
+            <IconBrandGithub className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
+            </Link>
+            <Link href="https://www.facebook.com/fantastechdev" target="_blank" rel="noopener noreferrer">
+            <IconBrandFacebook className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
+            </Link>
+            <Link href="https://www.instagram.com/fantastechdev" target="_blank" rel="noopener noreferrer">
+            <IconBrandInstagram className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 const GridLineHorizontal = ({ className, offset }: { className?: string; offset?: string; }) => {
