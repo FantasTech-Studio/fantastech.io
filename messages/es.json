@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "about": "Nosotros",
+    "services": "Servicios",
+    "contact": "Contáctanos",
+    "schedule": "Agenda una reunión"
+  },
+  "hero": {
+    "title": "Fantastic Solutions for Smart Businesses",
+    "subtitle": "Impulsando tu negocio con tecnología de vanguardia",
+    "cta": "Descubre nuestros servicios"
+  },
+  "about": {
+    "title_p1": "Crea soluciones",
+    "pivot1": "inteligentes",
+    "pivot2": "innovadoras",
+    "pivot3": "escalables",
+    "pivot4": "únicas",
+    "pivot5": "impactantes",
+    "title_p2": "y transforma tu negocio con Fantastech",
+    "description1": "En Fantastech, nos enorgullece ser ágiles, innovadores y audaces. Con sedes en los vibrantes núcleos tecnológicos de Ciudad de Guatemala y Milán, nuestro equipo global de expertos crea soluciones de software inteligentes, diseñadas para crecer y adaptarse a las necesidades de tu negocio a medida que evoluciona. Ya seas una startup en busca de innovación o una empresa consolidada que necesita transformación digital, estamos aquí para alinear tu tecnología con tu visión.",
+    "description2": "Nos apasiona entender tus desafíos únicos y diseñar soluciones a medida que impulsen tu éxito a largo plazo. En Fantastech, no solo desarrollamos software; creamos experiencias tecnológicas que potencian el futuro de tu negocio."
+  },
+  "services": {
+    "title": "Nuestros servicios",
+    "title_web": "Soluciones Web",
+    "description_web": "Creamos experiencias web que van más allá de lo ordinario. Con nuestro equipo experto, diseñamos y desarrollamos sitios web y plataformas que no solo se ven increíbles, sino que están construidos para funcionar de manera impecable. Desde tiendas en línea hasta portales corporativos, nuestras soluciones web están hechas a la medida, garantizando que tu presencia digital sea tan única como tu negocio.",
+    "title_app": "Aplicaciones Móviles",
+    "description_app": "Lleva tu marca a la palma de la mano de tus clientes. Desarrollamos aplicaciones móviles que son intuitivas, atractivas y diseñadas para destacar en un mercado saturado. Ya sea que busques conectar con tu audiencia en cualquier lugar o crear una nueva experiencia móvil innovadora, estamos aquí para darle vida a tu visión, asegurándonos de que cada interacción sea memorable.",
+    "title_cloud": "Servicios en la Nube",
+    "description_cloud": "Transforma la manera en que operas con nuestro servicio de infraestructura en la nube. Te ayudamos a construir, optimizar y escalar soluciones en la nube que se adaptan perfectamente a las necesidades de tu negocio. Desde migración hasta administración completa, nuestro equipo asegura que tu entorno en la nube sea seguro, eficiente y listo para crecer contigo, permitiéndote enfocarte en lo que mejor haces.",
+    "title_uiux": "Diseño UI/UX",
+    "description_uiux": "El diseño es mucho más que apariencia, es experiencia. Nuestro equipo de diseñadores UI/UX en Fantastech está comprometido con la creación de interfaces que son tan funcionales como hermosas. Nos enfocamos en entender a tus usuarios para diseñar experiencias que no solo satisfacen, sino que sorprenden. Hacemos que cada interacción cuente, asegurando que tus productos digitales sean tanto atractivos como fáciles de usar.",
+    "title_datasc": "Ciencia de Datos",
+    "description_datasc": "Tus datos tienen una historia que contar, y en Fantastech te ayudamos a escucharla. Nuestro equipo de científicos de datos transforma grandes volúmenes de datos en información valiosa que impulsa decisiones estratégicas. Desde análisis predictivo hasta visualización avanzada, te proporcionamos las herramientas para descubrir oportunidades y hacer que tus datos trabajen para ti",
+    "title_digitaltransf": "Transformación Digital",
+    "description_digitaltransf": "El futuro es digital, y en Fantastech estamos aquí para guiarte en ese viaje. Ayudamos a las empresas a reinventarse y a adaptarse a la era digital con soluciones que van desde la modernización de procesos hasta la integración de tecnologías emergentes. Te acompañamos en cada paso, asegurando que tu transformación digital sea efectiva, sostenible y alineada con tus objetivos de negocio."
+  },
+  "contact": {
+    "title": "Tecnología sin límites para impulsar tu futuro",
+    "subtitle": "Desde la idea hasta la ejecución, en Fantastech convertimos tu visión en soluciones tecnológicas innovadoras que impulsan el crecimiento de tu negocio.",
+    "contact_title": "Contáctanos",
+    "contact_description": "Tu próximo gran proyecto empieza con una conversación. ¡Hablemos!",
+    "contact_cta": "Agenda una reunión",
+    "contact_cta2": "WhatsApp",
+    "wwu_title": "Trabaja con nosotros",
+    "wwu_description": "Únete a nuestro equipo y lleva tu carrera al siguiente nivel. ¡Consulta nuestras posiciones abiertas!",
+    "wwu_cta": "Ver posiciones abiertas"
+  },
+  "footer": {
+      "about": "Nosotros",
+      "services": "Servicios",
+      "clients": "Clientes",
+      "contact": "Contáctanos",
+      "work_with_us": "Trabaja con nosotros",
+      "privacy_policy": "Políticas de privacidad",
+      "terms_conditios": "Términos y condiciones",
+      "copyright": "© Fantastech. Todos los derechos reservados."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "about": "Über Uns",
+    "services": "Dienstleistungen",
+    "contact": "Kontakt",
+    "schedule": "Anruf Planen"
+  },
+  "hero": {
+    "title": "Fantastic Solutions for Smart Businesses",
+    "subtitle": "Stärkung Ihres Unternehmens mit modernster Technologie",
+    "cta": "Entdecken Sie unsere Dienstleistungen"
+  },
+  "about": {
+    "title_p1": "Erstellen Sie Lösungen",
+    "pivot1": "intelligent",
+    "pivot2": "innovativ",
+    "pivot3": "skalierbar",
+    "pivot4": "einzigartig",
+    "pivot5": "wirkungsvoll",
+    "title_p2": "und transformieren Sie Ihr Unternehmen mit Fantastech",
+    "description1": "Bei Fantastech sind wir stolz darauf, agil, innovativ und mutig zu sein. Mit Standorten in den dynamischen Technologiezentren von Guatemala-Stadt und Mailand entwickelt unser globales Expertenteam intelligente Softwarelösungen, die darauf ausgelegt sind, mit den Bedürfnissen Ihres Unternehmens zu wachsen und sich anzupassen. Ob Sie ein Startup auf der Suche nach Innovation oder ein etabliertes Unternehmen sind, das eine digitale Transformation benötigt - wir sind hier, um Ihre Technologie mit Ihrer Vision in Einklang zu bringen.",
+    "description2": "Wir sind leidenschaftlich daran interessiert, Ihre einzigartigen Herausforderungen zu verstehen und maßgeschneiderte Lösungen zu entwickeln, die Ihren langfristigen Erfolg vorantreiben. Bei Fantastech entwickeln wir nicht nur Software; wir schaffen technologische Erfahrungen, die die Zukunft Ihres Unternehmens stärken."
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "title_web": "Weblösungen",
+    "description_web": "Wir schaffen Weberlebnisse, die über das Gewöhnliche hinausgehen. Mit unserem Expertenteam gestalten und entwickeln wir Websites und Plattformen, die nicht nur fantastisch aussehen, sondern auch einwandfrei funktionieren. Von Online-Shops bis hin zu Unternehmensportalen sind unsere Weblösungen maßgeschneidert und gewährleisten, dass Ihre digitale Präsenz so einzigartig ist wie Ihr Unternehmen.",
+    "title_app": "Mobile Anwendungen",
+    "description_app": "Bringen Sie Ihre Marke in die Hände Ihrer Kunden. Wir entwickeln mobile Anwendungen, die intuitiv, ansprechend und darauf ausgelegt sind, sich in einem gesättigten Markt abzuheben. Ob Sie sich überall mit Ihrem Publikum verbinden oder ein neues innovatives mobiles Erlebnis schaffen möchten - wir sind hier, um Ihre Vision zum Leben zu erwecken und stellen sicher, dass jede Interaktion unvergesslich ist.",
+    "title_cloud": "Cloud-Dienste",
+    "description_cloud": "Transformieren Sie Ihre Arbeitsweise mit unserem Cloud-Infrastrukturdienst. Wir helfen Ihnen beim Aufbau, der Optimierung und Skalierung von Cloud-Lösungen, die sich perfekt an Ihre Geschäftsanforderungen anpassen. Von der Migration bis zur vollständigen Verwaltung stellt unser Team sicher, dass Ihre Cloud-Umgebung sicher, effizient und bereit ist, mit Ihnen zu wachsen, damit Sie sich auf das konzentrieren können, was Sie am besten können.",
+    "title_uiux": "UI/UX-Design",
+    "description_uiux": "Design ist viel mehr als Aussehen, es ist Erfahrung. Unser UI/UX-Designteam bei Fantastech hat sich der Erstellung von Schnittstellen verschrieben, die ebenso funktional wie schön sind. Wir konzentrieren uns darauf, Ihre Benutzer zu verstehen, um Erlebnisse zu gestalten, die nicht nur zufriedenstellen, sondern überraschen. Wir machen jede Interaktion bedeutsam und stellen sicher, dass Ihre digitalen Produkte sowohl attraktiv als auch benutzerfreundlich sind.",
+    "title_datasc": "Data Science",
+    "description_datasc": "Ihre Daten haben eine Geschichte zu erzählen, und bei Fantastech helfen wir Ihnen, sie zu hören. Unser Team von Data Scientists verwandelt große Datenmengen in wertvolle Erkenntnisse, die strategische Entscheidungen vorantreiben. Von der prädiktiven Analyse bis zur fortgeschrittenen Visualisierung stellen wir Ihnen die Werkzeuge zur Verfügung, um Chancen zu entdecken und Ihre Daten für Sie arbeiten zu lassen.",
+    "title_digitaltransf": "Digitale Transformation",
+    "description_digitaltransf": "Die Zukunft ist digital, und bei Fantastech sind wir hier, um Sie auf dieser Reise zu begleiten. Wir helfen Unternehmen, sich neu zu erfinden und sich an das digitale Zeitalter anzupassen, mit Lösungen von der Prozessmodernisierung bis zur Integration aufstrebender Technologien. Wir begleiten Sie bei jedem Schritt und stellen sicher, dass Ihre digitale Transformation effektiv, nachhaltig und auf Ihre Geschäftsziele ausgerichtet ist."
+  },
+  "contact": {
+    "title": "Grenzenlose Technologie für Ihre Zukunft",
+    "subtitle": "Von der Idee bis zur Umsetzung verwandeln wir bei Fantastech Ihre Vision in innovative technologische Lösungen, die das Wachstum Ihres Unternehmens vorantreiben.",
+    "contact_title": "Kontaktieren Sie uns",
+    "contact_description": "Ihr nächstes großes Projekt beginnt mit einem Gespräch. Lassen Sie uns reden!",
+    "contact_cta": "Termin vereinbaren",
+    "contact_cta2": "WhatsApp",
+    "wwu_title": "Arbeiten Sie mit uns",
+    "wwu_description": "Werden Sie Teil unseres Teams und bringen Sie Ihre Karriere auf die nächste Stufe. Sehen Sie sich unsere offenen Stellen an!",
+    "wwu_cta": "Offene Stellen ansehen"
+  },
+  "footer": {
+    "about": "Über Uns",
+    "services": "Dienstleistungen",
+    "clients": "Kunden",
+    "contact": "Kontakt",
+    "work_with_us": "Arbeiten Sie mit uns",
+    "privacy_policy": "Datenschutzerklärung",
+    "terms_conditios": "Allgemeine Geschäftsbedingungen",
+    "copyright": "© Fantastech. Alle Rechte vorbehalten."
+  }
+}

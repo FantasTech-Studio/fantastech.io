@@ -1,3 +1,4 @@
+'use client';
 import { cn } from "@/lib/utils";
 import {
 	IconBrandFacebook,
@@ -9,42 +10,50 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useLanguage } from '@/context/LanguageContext';
 
 export function Footer() {
-	const pages = [
-		{
-			title: "Nosotros",
-			href: "#about",
-		},
-		{
-			title: "Servicios",
-			href: "#services",
-		},
-		{
-			title: "Clientes",
-			href: "#",
-		},
-		{
-			title: "Contáctanos",
-			href: "#contact",
-		},
-		{
-			title: "Trabaja con nosotros",
-			href: "https://doc.clickup.com/9006076676/d/h/8ccvmr4-2417/eebc811d1ea7802",
-		},
-		{
-			title: "Políticas de privacidad",
-			href: "#",
-		},
-		{
-			title: "Términos y condiciones",
-			href: "#",
-		},
+	try {
+		const { t, isLoading } = useLanguage();
+
+		if (isLoading) {
+			return <div className="w-full py-20 text-center">Loading...</div>;
+		}
+
+		const pages = [
+			{
+				title: t('footer.about'),
+				href: "#about",
+			},
+			{
+				title: t('footer.services'),
+				href: "#services",
+			},
+			{
+				title: t('footer.clients'),
+				href: "#",
+			},
+			{
+				title: t('footer.contact'),
+				href: "#contact",
+			},
+			{
+				title: t('footer.work_with_us'),
+				href: "https://doc.clickup.com/9006076676/d/h/8ccvmr4-2417/eebc811d1ea7802",
+			},
+			{
+				title: t('footer.privacy_policy'),
+				href: "#",
+			},
+			{
+				title: t('footer.terms_conditios'),
+				href: "#",
+			},
   	];
 
 	return (
 		<div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-20 bg-white dark:bg-black-100 w-full relative overflow-hidden">
-			<div className="max-w-7xl mx-auto text-sm text-neutral-500  justify-between items-start  md:px-8">
+			<div className="max-w-7xl mx-auto text-sm text-neutral-500 justify-between items-start md:px-8">
 				<div className="flex flex-col items-center justify-center w-full relative">
 					<div className="mr-0 md:mr-4  md:flex mb-4">
 						<Logo />
@@ -67,7 +76,7 @@ export function Footer() {
 				</div>
 				<div className="flex sm:flex-row flex-col justify-between mt-8 items-center w-full">
 					<p className="text-neutral-500 dark:text-neutral-400 mb-8 sm:mb-0">
-						&copy; Fantastech
+						{t('footer.copyright')}
 					</p>
 					<div className="flex gap-4">
 						{/* <Link href="#" target="_blank" rel="noopener noreferrer">
@@ -90,6 +99,10 @@ export function Footer() {
 			</div>
 		</div>
   	);
+	} catch (error) {
+		console.error('Error in Footer:', error);
+		return <div className="w-full py-20 text-center">Error loading footer</div>;
+	}
 }
 
 const GridLineHorizontal = ({ className, offset }: { className?: string; offset?: string; }) => {

@@ -5,20 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { LanguageSelector } from './LanguageSelector';
+import { useLanguage } from '@/context/LanguageContext';
 
 
 export const Navbar = () => {
+	const { t } = useLanguage();
 	const navItems = [
 		{
-			name: "Nosotros",
+			name: t('nav.about'),
 			link: "#about",
 		},
 		{
-			name: "Servicios",
+			name: t('nav.services'),
 			link: "#services",
 		},
 		{
-			name: "Contáctanos",
+			name: t('nav.contact'),
 			link: "#contact",
 		},
   	];
@@ -33,6 +36,7 @@ export const Navbar = () => {
 };
 
 const DesktopNav = ({ navItems }: any) => {
+	const { t } = useLanguage();
 	const [hovered, setHovered] = useState<number | null>(null);
   	return (
 		<motion.div
@@ -64,90 +68,90 @@ const DesktopNav = ({ navItems }: any) => {
 			</Link>
 			))}
 		</div>
-		<Link href="https://cal.com/fantastech" target="__blank">
-			<button className="hidden md:block bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-sm font-semibold leading-6  text-white">
-				<span className="absolute inset-0 overflow-hidden rounded-full">
-					<span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(171,164,183,0.6)_0%,rgba(132,121,150,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-				</span>
-				<div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-2 px-8 ring-1 ring-white/10 ">
-					<span>
-						Agenda una reunión
+		<div className="flex items-center space-x-4">
+			<Link href="https://cal.com/fantastech" target="__blank">
+				<button className="hidden md:block bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-sm font-semibold leading-6  text-white">
+					<span className="absolute inset-0 overflow-hidden rounded-full">
+						<span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(171,164,183,0.6)_0%,rgba(132,121,150,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 					</span>
-				</div>
-				<span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-purple/0 via-indigo-500/90 to-purple/0 transition-opacity duration-500 group-hover:opacity-40" />
-			</button>
-	  	</Link>
+					<div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-2 px-8 ring-1 ring-white/10 ">
+						<span>{t('nav.schedule')}</span>
+					</div>
+					<span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-purple/0 via-indigo-500/90 to-purple/0 transition-opacity duration-500 group-hover:opacity-40" />
+				</button>
+			</Link>
+			<LanguageSelector />
+		</div>
 	</motion.div>
   );
 };
 
 const MobileNav = ({ navItems }: any) => {
-	const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
 
-	return (
-	<>
-	  <motion.div
-		animate={{
-		  borderRadius: open ? "4px" : "2rem",
-		}}
-		key={String(open)}
-		className="flex relative flex-col lg:hidden w-full justify-between items-center bg-white dark:bg-black-100  max-w-[calc(100vw-2rem)] mx-auto px-4 py-2 border border-neutral-100 dark:border-white/[0.2]"
-	  >
-		<div className="flex flex-row justify-between items-center w-full">
-		  <Logo />
-		  {open ? (
-			<IconX
-			  className="text-black dark:text-white"
-			  onClick={() => setOpen(!open)}
-			/>
-		  ) : (
-			<IconMenu2
-			  className="text-black dark:text-white"
-			  onClick={() => setOpen(!open)}
-			/>
-		  )}
-		</div>
+  return (
+    <>
+      <motion.div
+        animate={{
+          borderRadius: open ? "4px" : "2rem",
+        }}
+        key={String(open)}
+        className="flex relative flex-col lg:hidden w-full justify-between items-center bg-white dark:bg-black-100  max-w-[calc(100vw-2rem)] mx-auto px-4 py-2 border border-neutral-100 dark:border-white/[0.2]"
+      >
+        <div className="flex flex-row justify-between items-center w-full">
+          <Logo />
+          {open ? (
+            <IconX
+              className="text-black dark:text-white"
+              onClick={() => setOpen(!open)}
+            />
+          ) : (
+            <IconMenu2
+              className="text-black dark:text-white"
+              onClick={() => setOpen(!open)}
+            />
+          )}
+        </div>
 
-		<AnimatePresence>
-		  {open && (
-			<motion.div
-			  initial={{
-				opacity: 0,
-			  }}
-			  animate={{ opacity: 1 }}
-			  exit={{ opacity: 0 }}
-			  className="flex rounded-lg absolute top-20 bg-white dark:bg-black-100 inset-x-0 z-20 flex-col items-start justify-start gap-4 w-full px-4 py-8 border border-neutral-100 dark:border-white/[0.2]"
-			>
-			  {navItems.map((navItem: any, idx: number) => (
-				<Link
-				  key={`link=${idx}`}
-				  href={navItem.link}
-				  className="relative text-neutral-600 dark:text-neutral-300"
-				>
-				  <motion.span className="block">{navItem.name} </motion.span>
-				</Link>
-			  ))}
-			  {/* <button className="px-8 py-2 w-full rounded-lg bg-black dark:bg-white dark:text-black font-medium text-white shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.4)_inset]">
-				Agenda un reunión
-			  </button> */}
-			  <Link href="https://cal.com/fantastech" target="__blank" className="w-full">
-				<button className="font-medium w-full bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-lg p-px text-sm leading-6  text-white">
-					<span className="absolute inset-0 overflow-hidden rounded-full">
-						<span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(171,164,183,0.6)_0%,rgba(132,121,150,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-					</span>
-					<div className="relative flex space-x-2 items-center z-10 rounded-lg bg-zinc-950 py-2 px-8 ring-1 ring-white/10 justify-center ">
-						<span>
-							Agenda una reunión
-						</span>
-					</div>
-					<span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-purple/0 via-indigo-500/90 to-purple/0 transition-opacity duration-500 group-hover:opacity-40" />
-				</button>
-			 </Link>
-			</motion.div>
-		  )}
-		</AnimatePresence>
-	  </motion.div>
-	</>
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="flex rounded-lg absolute top-20 bg-white dark:bg-black-100 inset-x-0 z-20 flex-col items-start justify-start gap-4 w-full px-4 py-8 border border-neutral-100 dark:border-white/[0.2]"
+            >
+              {navItems.map((navItem: any, idx: number) => (
+                <Link
+                  key={`link=${idx}`}
+                  href={navItem.link}
+                  className="relative text-neutral-600 dark:text-neutral-300"
+                >
+                  <motion.span className="block">{navItem.name}</motion.span>
+                </Link>
+              ))}
+              <div className="w-full flex flex-col gap-4">
+                <LanguageSelector />
+                <Link href="https://cal.com/fantastech" target="__blank" className="w-full">
+                  <button className="font-medium w-full bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-lg p-px text-sm leading-6  text-white">
+                    <span className="absolute inset-0 overflow-hidden rounded-full">
+                      <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(171,164,183,0.6)_0%,rgba(132,121,150,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    </span>
+                    <div className="relative flex space-x-2 items-center z-10 rounded-lg bg-zinc-950 py-2 px-8 ring-1 ring-white/10 justify-center">
+                      <span>{t('nav.schedule')}</span>
+                    </div>
+                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-purple/0 via-indigo-500/90 to-purple/0 transition-opacity duration-500 group-hover:opacity-40" />
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </>
   );
 };
 
