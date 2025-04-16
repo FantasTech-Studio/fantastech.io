@@ -48,11 +48,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     router.push(newPathname);
   };
 
-  const t = (key: string) => {
+  const t = (key: string): string => {
     if (isLoading) return key;
     try {
       const value = key.split('.').reduce((obj, k) => obj?.[k], translations);
-      return value || key;
+      return typeof value === 'string' ? value : key;
     } catch (error) {
       return key;
     }
