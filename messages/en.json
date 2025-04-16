@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "schedule": "Schedule a Call"
+  },
+  "hero": {
+    "title": "Fantastic Solutions for Smart Businesses",
+    "subtitle": "Empowering your business with cutting-edge technology",
+    "cta": "Discover our services"
+  },
+  "about": {
+    "title_p1": "Create solutions that are",
+    "pivot1": "intelligent",
+    "pivot2": "innovative",
+    "pivot3": "scalable",
+    "pivot4": "unique",
+    "pivot5": "impactful",
+    "title_p2": "and transform your business with Fantastech",
+    "description1": "At Fantastech, we take pride in being agile, innovative, and bold. With offices in the vibrant tech hubs of Guatemala City and Milan, our global team of experts creates intelligent software solutions, designed to grow and adapt to your business needs as it evolves. Whether you're a startup seeking innovation or an established company needing digital transformation, we're here to align your technology with your vision.",
+    "description2": "We are passionate about understanding your unique challenges and designing tailored solutions that drive your long-term success. At Fantastech, we don't just develop software; we create technological experiences that empower your business's future."
+  },
+  "services": {
+    "title": "Our Services",
+    "title_web": "Web Solutions",
+    "description_web": "We create web experiences that go beyond the ordinary. With our expert team, we design and develop websites and platforms that not only look amazing but are built to function flawlessly. From online stores to corporate portals, our web solutions are tailored to ensure your digital presence is as unique as your business.",
+    "title_app": "Mobile Applications",
+    "description_app": "Bring your brand to your customers' fingertips. We develop mobile applications that are intuitive, engaging, and designed to stand out in a saturated market. Whether you're looking to connect with your audience anywhere or create a new innovative mobile experience, we're here to bring your vision to life, ensuring every interaction is memorable.",
+    "title_cloud": "Cloud Services",
+    "description_cloud": "Transform the way you operate with our cloud infrastructure service. We help you build, optimize, and scale cloud solutions that perfectly adapt to your business needs. From migration to complete management, our team ensures your cloud environment is secure, efficient, and ready to grow with you, allowing you to focus on what you do best.",
+    "title_uiux": "UI/UX Design",
+    "description_uiux": "Design is much more than appearance, it's experience. Our UI/UX design team at Fantastech is committed to creating interfaces that are as functional as they are beautiful. We focus on understanding your users to design experiences that don't just satisfy but surprise. We make every interaction count, ensuring your digital products are both attractive and easy to use.",
+    "title_datasc": "Data Science",
+    "description_datasc": "Your data has a story to tell, and at Fantastech, we help you listen to it. Our team of data scientists transforms large volumes of data into valuable insights that drive strategic decisions. From predictive analytics to advanced visualization, we provide you with the tools to discover opportunities and make your data work for you",
+    "title_digitaltransf": "Digital Transformation",
+    "description_digitaltransf": "The future is digital, and at FantasTech, we're here to guide you on that journey. We help businesses reinvent themselves and adapt to the digital era with solutions ranging from process modernization to emerging technology integration. We accompany you every step of the way, ensuring your digital transformation is effective, sustainable, and aligned with your business objectives."
+  },
+  "contact": {
+    "title": "Limitless Technology to Drive Your Future",
+    "subtitle": "From idea to execution, at Fantastech we turn your vision into innovative technological solutions that drive your business growth.",
+    "contact_title": "Contact Us",
+    "contact_description": "Your next big project starts with a conversation. Let's talk!",
+    "contact_cta": "Schedule a Meeting",
+    "contact_cta2": "WhatsApp",
+    "wwu_title": "Work With Us",
+    "wwu_description": "Join our team and take your career to the next level. Check out our open positions!",
+    "wwu_cta": "View Open Positions"
+  },
+  "footer": {
+      "about": "About",
+      "services": "Services",
+      "clients": "Clients",
+      "contact": "Contact",
+      "work_with_us": "Work With Us",
+      "privacy_policy": "Privacy Policy",
+      "terms_conditios": "Terms and Conditions",
+      "copyright": "© Fantastech. All rights reserved."
+  }
+}
