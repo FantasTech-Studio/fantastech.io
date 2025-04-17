@@ -15,20 +15,31 @@ export const IubendaCookies = () => {
               "siteId":4001241,
               "cookiePolicyId":52417407,
               "lang":"en",
-              "storage":{"useSiteId":true}
+              "storage":{"useSiteId":true},
+              "gdprAppliesGlobally":true,
+              "enableGdpr":true,
+              "googleAdditionalConsentMode":true,
+              "banner":{
+                "acceptButtonDisplay":true,
+                "customizeButtonDisplay":true,
+                "position":"float-bottom-center"
+              }
             };
           `,
         }}
       />
       <Script
-        strategy="beforeInteractive"
-        src="https://cs.iubenda.com/autoblocking/4001241.js"
-      />
-      <Script
+        id="iubenda-stub"
         strategy="beforeInteractive"
         src="//cdn.iubenda.com/cs/gpp/stub.js"
       />
       <Script
+        id="iubenda-autoblocking"
+        strategy="beforeInteractive"
+        src="https://cs.iubenda.com/autoblocking/4001241.js"
+      />
+      <Script
+        id="iubenda-cs"
         strategy="beforeInteractive"
         src="//cdn.iubenda.com/cs/iubenda_cs.js"
       />
