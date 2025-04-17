@@ -48,7 +48,7 @@ const Services = () => {
 	}
 
 	return (
-		<section id='services' className='bg-white dark:bg-black-100 py-20 w-full'>
+		<section id='services' className='bg-white dark:bg-black-100 py-20 w-full -scroll-mt-64'>
 			<LampContainer>
 				<motion.h1
 					initial={{ opacity: 0.5, y: 100 }}
