@@ -1,13 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import { useLanguage } from '@/context/LanguageContext';
-
-const languages = [
-  { code: 'en', name: '🇺🇸', label: 'English' },
-  { code: 'es', name: '🇪🇸', label: 'Español' },
-  { code: 'it', name: '🇮🇹', label: 'Italiano' },
-  { code: 'de', name: '🇩🇪', label: 'Deutsch' }
-];
+import { useLanguage, languages } from '@/context/LanguageContext';
 
 export const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
