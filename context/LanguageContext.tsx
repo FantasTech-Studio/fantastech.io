@@ -2,6 +2,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
+export const languages = [
+  { code: 'en', name: '🇺🇸', label: 'English' },
+  { code: 'es', name: '🇪🇸', label: 'Español' },
+  { code: 'it', name: '🇮🇹', label: 'Italiano' },
+  { code: 'de', name: '🇩🇪', label: 'Deutsch' }
+];
+
 type LanguageContextType = {
   language: string;
   setLanguage: (lang: string) => void;
@@ -44,7 +51,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const handleSetLanguage = (newLang: string) => {
     setLanguage(newLang);
-    const newPathname = pathname.replace(`/${currentLocale}`, `/${newLang}`);
+    const segments = pathname.split('/');
+    if (segments[1] && languages.some(lang => lang.code === segments[1])) {
+      segments[1] = newLang;
+    } else {
+      segments.splice(1, 0, newLang);
+    }
+    const newPathname = segments.join('/');
     router.push(newPathname);
   };
 
