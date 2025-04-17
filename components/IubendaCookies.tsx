@@ -7,7 +7,7 @@ export const IubendaCookies = () => {
     <>
       <Script
         id="iubenda-config"
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             var _iub = _iub || [];
@@ -21,17 +21,16 @@ export const IubendaCookies = () => {
         }}
       />
       <Script
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         src="https://cs.iubenda.com/autoblocking/4001241.js"
       />
       <Script
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         src="//cdn.iubenda.com/cs/gpp/stub.js"
       />
       <Script
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         src="//cdn.iubenda.com/cs/iubenda_cs.js"
-        async
       />
     </>
   );
