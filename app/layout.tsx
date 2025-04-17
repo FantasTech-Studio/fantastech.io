@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { IubendaCookies } from "@/components/IubendaCookies";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <GoogleAnalytics />
+        <IubendaCookies />
         <LanguageProvider>
           <ThemeProvider
             attribute="class"
