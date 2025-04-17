@@ -31,12 +31,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const currentLocale = pathname.split('/')[1] || 'en';
   const [language, setLanguage] = useState(currentLocale);
   const [translations, setTranslations] = useState<Record<string, any>>({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const loadTranslations = async () => {
-      setIsLoading(true);
       try {
+        setIsLoading(true);
+        // Precarga las traducciones
         const module = await import(`../messages/${language}.json`);
         setTranslations(module.default || {});
       } catch (error) {
@@ -46,6 +47,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         setIsLoading(false);
       }
     };
+
     loadTranslations();
   }, [language]);
 
@@ -62,7 +64,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   const t = (key: string): string => {
-    if (isLoading) return key;
     try {
       const value = key.split('.').reduce((obj, k) => obj?.[k], translations);
       return typeof value === 'string' ? value : key;
