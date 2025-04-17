@@ -16,9 +16,6 @@ export const IubendaCookies = () => {
               "cookiePolicyId":52417407,
               "lang":"en",
               "storage":{"useSiteId":true},
-              "gdprAppliesGlobally":true,
-              "enableGdpr":true,
-              "googleAdditionalConsentMode":true,
               "banner":{
                 "acceptButtonDisplay":true,
                 "customizeButtonDisplay":true,

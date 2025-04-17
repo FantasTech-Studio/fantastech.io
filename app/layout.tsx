@@ -3,10 +3,12 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { LanguageProvider } from "@/context/LanguageContext";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import Script from 'next/script';
 import { IubendaCookies } from "@/components/IubendaCookies";
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Fantastech",
@@ -20,9 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className={inter.className}>
-        <GoogleAnalytics />
-        <IubendaCookies />
         <LanguageProvider>
           <ThemeProvider
             attribute="class"
