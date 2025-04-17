@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useLanguage } from '@/context/LanguageContext';
+import { IubendaPolicies } from './IubendaPolicies';
 
 export function Footer() {
   const { t, isLoading } = useLanguage();
@@ -74,15 +75,15 @@ export function Footer() {
           <GridLineHorizontal className="max-w-7xl mx-auto mt-8" />
         </div>
         <div className="flex sm:flex-row flex-col justify-between mt-8 items-center w-full">
-          <p className="text-neutral-500 dark:text-neutral-400 mb-8 sm:mb-0">
-            {t('footer.copyright')}
-          </p>
+          <div className="flex flex-col items-center sm:items-start gap-4">
+            <IubendaPolicies />
+            <p className="text-neutral-500 dark:text-neutral-400">
+              {t('footer.copyright')}
+            </p>
+          </div>
           <div className="flex gap-4">
-            {/* <Link href="#" target="_blank" rel="noopener noreferrer">
-            <IconBrandTwitter className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
-            </Link> */}
             <Link href="https://www.linkedin.com/company/fantastechdev" target="_blank" rel="noopener noreferrer">
-            <IconBrandLinkedin className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
+              <IconBrandLinkedin className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />
             </Link>
             <Link href="https://github.com/FantasTech-Studio" target="_blank" rel="noopener noreferrer">
             <IconBrandGithub className="h-6 w-6 text-neutral-500 dark:text-neutral-300" />

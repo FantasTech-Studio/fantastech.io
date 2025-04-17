@@ -8,7 +8,8 @@ export const GoogleAnalytics = () => {
       <Script
         id="gtag"
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-2BCKN64TFX`}
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-2BCKN64TFX"
       />
       <Script
         id="gtag-config"
@@ -18,9 +19,7 @@ export const GoogleAnalytics = () => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-2BCKN64TFX', {
-              'cookie_flags': 'max-age=7200;secure;samesite=none'
-            });
+            gtag('config', 'G-2BCKN64TFX');
           `,
         }}
       />
