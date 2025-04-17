@@ -42,6 +42,7 @@ export const IubendaCookies = () => {
         id="iubenda-cs"
         strategy="beforeInteractive"
         src="//cdn.iubenda.com/cs/iubenda_cs.js"
+        async
       />
     </>
   );
