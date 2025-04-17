@@ -23,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics />
+      <IubendaCookies />
       <body className={inter.className}>
         <LanguageProvider>
           <ThemeProvider
