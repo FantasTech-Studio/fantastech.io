@@ -22,8 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleAnalytics />
-      <IubendaCookies />
+      <head>
+        <GoogleAnalytics />
+        <IubendaCookies />
+      </head>
       <body className={inter.className}>
         <LanguageProvider>
           <ThemeProvider

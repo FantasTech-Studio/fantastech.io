@@ -24,6 +24,10 @@ export const Navbar = () => {
 			name: t('nav.contact'),
 			link: "#contact",
 		},
+		{
+			name: "TaaS",
+			link: "/taas",
+		},
   	];
 
 	return (
