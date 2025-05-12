@@ -13,6 +13,7 @@
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
     "framer-motion": "^11.3.7",
+    "lucide-react": "^0.509.0",
     "mini-svg-data-uri": "^1.4.4",
     "motion": "^12.10.5",
     "next": "^14.2.27",
