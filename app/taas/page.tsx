@@ -5,6 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { PlayfulHeroSection } from "@/components/ui/taas/PlayfulHeroSection";
 import { FeaturesSectionDemo } from "@/components/ui/taas/WhyUs";
 import { GlowingEffectDemo } from "@/components/ui/taas/Services";
+import { TimelineDemo } from "@/components/ui/taas/OurProcess";
 
 export default function Taas() {
   const { t, isLoading } = useLanguage();
@@ -20,6 +21,7 @@ export default function Taas() {
         <PlayfulHeroSection />
         <FeaturesSectionDemo />
         <GlowingEffectDemo />
+        <TimelineDemo />
         <Footer />
       </div>
     </main>
