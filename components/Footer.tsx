@@ -43,11 +43,15 @@ export function Footer() {
     },
     {
       title: t('footer.privacy_policy'),
-      href: "#",
+      href: "https://www.iubenda.com/privacy-policy/52417407",
+      target: "_blank",
+      rel: "noopener noreferrer"
     },
     {
-      title: t('footer.terms_conditios'),
-      href: "#",
+      title: t('footer.cookie_policy'),
+      href: "https://www.iubenda.com/privacy-policy/52417407/cookie-policy",
+      target: "_blank",
+      rel: "noopener noreferrer"
     },
   ];
 
@@ -63,10 +67,12 @@ export function Footer() {
             {pages.map((page, idx) => (
             <li key={"pages" + idx} className="list-none text-center">
               <Link
-              className="transition-colors hover:text-text-neutral-800 "
-              href={page.href}
+                className="transition-colors hover:text-text-neutral-800"
+                href={page.href}
+                target={page.target}
+                rel={page.rel}
               >
-              {page.title}
+                {page.title}
               </Link>
             </li>
             ))}
