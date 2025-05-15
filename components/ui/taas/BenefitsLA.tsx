@@ -3,30 +3,33 @@ import { cn } from "@/lib/utils";
 import { IconCpu, IconWorldCode, IconRosetteDiscountCheck, IconClockHour7 } from "@tabler/icons-react";
 import React from "react";
 import { useId } from "react";
+import { useLanguage } from '@/context/LanguageContext';
 
 export function StatsWithGridBackground() {
+  const { t } = useLanguage();
+  
   const items = [
     {
         title: "Years in the business",
-        description: "High-level expertise in cutting-edge technologies",
+        description: t('taas.benefitsLA.benefits.expertise.description'),
         icon: IconCpu,
         value: "",
     },
     {
         title: "People Served",
-        description: "Cultural alignment with US and European teams",
+        description: t('taas.benefitsLA.benefits.alignment.description'),
         icon: IconWorldCode,
         value: "",
     },
     {
         title: "Response Time",
-        description: "Competitive rates, without compromising on quality",
+        description: t('taas.benefitsLA.benefits.rates.description'),
         icon: IconRosetteDiscountCheck,
         value: "",
     },
     {
         title: "Time zone advantages",
-        description: "Time zone advantages for nearshore collaboration",
+        description: t('taas.benefitsLA.benefits.timezone.description'),
         icon: IconClockHour7,
         value: "",
     },
@@ -35,14 +38,11 @@ export function StatsWithGridBackground() {
     <div className="py-20">
         <div className="px-8">
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-            {/* {t('contact.title')} */}
-            Benefits of IT Talent from Latin America
+            {t('taas.benefitsLA.title')}
           </h4>
   
           <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto mb-12 text-neutral-500 text-center font-normal dark:text-neutral-300">
-            {/* {t('contact.subtitle')} */}
-            Latin America offers a unique blend of technical excellence, cultural compatibility, and strategic time 
-            zone alignment—making it the ideal region to scale your team efficiently and effectively.
+            {t('taas.benefitsLA.description')}
           </p>
         </div>
       <div className="mx-auto max-w-7xl border border-neutral-200 dark:border-neutral-800">

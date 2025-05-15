@@ -7,57 +7,58 @@ import {
     IconDirections,
     IconCloud,
     IconAi
-  } from "@tabler/icons-react";
+} from "@tabler/icons-react";
 import { GlowingEffect } from "@/components/ui/GlowingEffect";
+import { useLanguage } from '@/context/LanguageContext';
 
 export function GlowingEffectDemo() {
+  const { t } = useLanguage();
+  
   return (
     <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
         <div className="px-8">
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-            {/* {t('contact.title')} */}
-            Comprehensive IT Talent Solutions
+            {t('taas.services.title')}
           </h4>
   
           <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto mb-12 text-neutral-500 text-center font-normal dark:text-neutral-300">
-            {/* {t('contact.subtitle')} */}
-            From full-stack engineers to cloud architects and data scientists, our network covers every role you need to scale your tech team with confidence
+            {t('taas.services.description')}
           </p>
         </div>
     <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
       <GridItem
         area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
         icon={<IconCode className="h-4 w-4 text-black dark:text-neutral-400" />}
-        title="Software Development & Design"
-        description="Full-stack developers, front-end & back-end experts, UI/UX designers."
+        title={t('taas.services.developer.title')}
+        description={t('taas.services.developer.description')}
       />
 
       <GridItem
         area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
         icon={<IconZoomCode className="h-4 w-4 text-black dark:text-neutral-400" />}
-        title="QA & Testing"
-        description="Experienced professionals ensuring robust, bug-free software."
+        title={t('taas.services.qa.title')}
+        description={t('taas.services.qa.description')}
       />
 
       <GridItem
         area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
         icon={<IconDirections className="h-4 w-4 text-black dark:text-neutral-400" />}
-        title="Project Management"
-        description="Certified project managers who understand the agile workflow and drive successful delivery."
+        title={t('taas.services.pm.title')}
+        description={t('taas.services.pm.description')}
       />
 
       <GridItem
         area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
         icon={<IconCloud className="h-4 w-4 text-black dark:text-neutral-400" />}
-        title="Cloud & Advanced Technologies"
-        description="Specialists in AWS, Azure, Google Cloud, DevOps, and more."
+        title={t('taas.services.cloud.title')}
+        description={t('taas.services.cloud.description')}
       />
 
       <GridItem
         area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
         icon={<IconAi className="h-4 w-4 text-black dark:text-neutral-400" />}
-        title="AI & Data Science"
-        description="Innovative AI professionals ready to scale your projects."
+        title={t('taas.services.ai.title')}
+        description={t('taas.services.ai.description')}
       />
     </ul>
     </div>

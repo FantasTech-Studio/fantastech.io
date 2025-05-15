@@ -59,38 +59,69 @@
   },
   "taas": {
     "hero": {
-      "title": "Launch Your Project with the Best IT Talent from Latin America",
-      "subtitle": "We provide specialized IT professionals in Software Development, QA, Project Management, and more. Your trusted partner for remote teams. Ready for Takeoff?",
+      "title_p1": "Launch Your Project with the",
+      "title_highlight": "Best IT Talent",
+      "title_p2": "from",
+      "title_underline": "Latin America",
+      "subtitle_p1": "We provide specialized IT professionals in Software Development, QA, Project Management, and more. Your",
+      "subtitle_underline": "trusted partner",
+      "subtitle_p2": "for remote teams.",
+      "subtitle_p3": "Ready for Takeoff?",
       "cta": "Let's Build Your Dream Team",
-      "cta2": "Why choose us?"
+      "cta2": "Why choose us?",
+      "chat_client": "Hi! I’m looking for a Frontend Developer with React and TypeScript experience. Can you help?",
+      "chat_ft": "Absolutely! Here are some top vetted profiles ready to join your team."
     },
     "whyus": {
-      "title": "Why Choose Us?",
+      "title": "Why Choose Fantastech for IT Talent?",
+      "content": "Choosing the right partner for your tech team is critical. At Fantastech, we combine global vision with regional expertise to deliver reliable, scalable, and high-performing IT talent tailored to your project’s needs.",
       "features": {
-        "talent": {
-          "title": "Top Latin American Talent",
-          "description": "Access a curated network of skilled professionals ready to elevate your projects"
+        "global": {
+          "title": "Global Reach, Local Expertise",
+          "description": "With a focus on the US and Central Europe, we bridge the gap between high-demand markets and Latin America’s top talent."
         },
         "cost": {
           "title": "Cost-Effective Solutions",
-          "description": "Optimize your budget without compromising on quality and expertise"
+          "description": "We offer competitive pricing without compromising on quality, providing cost-effective solutions without sacrificing excellence."
         },
-        "timezone": {
-          "title": "Timezone Advantage",
-          "description": "Benefit from real-time collaboration with minimal time difference"
+        "communication": {
+          "title": "Fluent Communication, Seamless Collaboration",
+          "description": "We ensure effective communication with talent fluent in English and familiar with global work cultures."
         },
-        "culture": {
-          "title": "Cultural Alignment",
-          "description": "Work with professionals who understand and adapt to your business culture"
+        "mission": {
+          "title": "Mission-Driven Success",
+          "description": "We are committed to the success of your project. Our technical leaders provide expert guidance alongside the talent you need, ensuring large-scale implementations follow best practices and global deployment standards."
         }
       }
     },
     "services": {
-      "title": "Our Services",
-      "description": "We make building your dream team simple and strategic. Our process is designed to be clear, efficient, and human."
+      "title": "Comprehensive IT Talent Solutions",
+      "description": "From full-stack engineers to cloud architects and data scientists, our network covers every role you need to scale your tech team with confidence.",
+      "developer": {
+        "title": "Software Development & Design",
+        "description": "Full-stack developers, front-end & back-end experts, UI/UX designers."
+      },
+      "qa": {
+        "title": "QA & Testing",
+        "description": "Experienced professionals ensuring robust, bug-free software."
+      },
+      "pm": {
+        "title": "Project Management",
+        "description": "Certified project managers who understand the agile workflow and drive successful delivery."
+      },
+      "cloud": {
+        "title": "Cloud & Advanced Technologies",
+        "description": "Specialists in AWS, Azure, Google Cloud, DevOps, and more."
+      },
+      "ai": {
+        "title": "AI & Data Science",
+        "description": "Innovative AI professionals ready to scale your projects."
+      }
     },
     "process": {
       "title": "Our Process",
+      "subtitle": "We make building your dream team simple and strategic.",
+      "description": "Our process is designed to be clear, efficient, and human. From understanding your needs to integrating top talent into your workflow, we’re with you every step of the way.",
       "steps": {
         "assessment": {
           "title": "1. Needs Assessment",
@@ -107,6 +138,24 @@
         "control": {
           "title": "4. Mission Control",
           "description": "Our engagement doesn't stop at hiring. You'll benefit from ongoing support, project oversight, and strategic check-ins led by our technical leaders—ensuring your implementation stays on track, agile, and future-proof."
+        }
+      }
+    },
+    "benefitsLA": {
+      "title": "Benefits of IT Talent from Latin America",
+      "description": "Latin America offers a unique blend of technical excellence, cultural compatibility, and strategic time zone alignment—making it the ideal region to scale your team efficiently and effectively.",
+      "benefits": {
+        "expertise": {
+          "description": "High-level expertise in cutting-edge technologies."
+        },
+        "alignment": {
+          "description": "Cultural alignment with US and European teams."
+        },
+        "rates": {
+          "description": "Competitive rates, without compromising on quality."
+        },
+        "timezone": {
+          "description": "Time zone advantages for nearshore collaboration."
         }
       }
     },

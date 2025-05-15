@@ -5,30 +5,30 @@ import {
   IconUsersGroup,
   IconTargetArrow
 } from "@tabler/icons-react";
+import { useLanguage } from '@/context/LanguageContext';
 
 export function FeaturesSectionDemo() {
+  const { t } = useLanguage();
+  
   const features = [
     {
-      title: "Global Reach, Local Expertise",
-      description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
+      title: t('taas.whyus.features.global.title'),
+      description: t('taas.whyus.features.global.description'),
       icon: <IconWorldPin />,
     },
     {
-      title: "Cost-Effective Solutions",
-      description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
+      title: t('taas.whyus.features.cost.title'),
+      description: t('taas.whyus.features.cost.description'),
       icon: <IconCurrencyDollar />,
     },
     {
-      title: "Fluent Communication, Seamless Collaboration",
-      description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
+      title: t('taas.whyus.features.communication.title'),
+      description: t('taas.whyus.features.communication.description'),
       icon: <IconUsersGroup />,
     },
     {
-      title: "Mission-Driven Success",
-      description: "We just cannot be taken down by anyone.",
+      title: t('taas.whyus.features.mission.title'),
+      description: t('taas.whyus.features.mission.description'),
       icon: <IconTargetArrow />,
     },
   ];
@@ -36,13 +36,11 @@ export function FeaturesSectionDemo() {
     <div id="why-us-section" className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
         <div className="px-8">
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-            {/* {t('contact.title')} */}
-            Why Choose Fantastech for IT Talent?
+            {t('taas.whyus.title')}
           </h4>
   
           <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto mb-12 text-neutral-500 text-center font-normal dark:text-neutral-300">
-            {/* {t('contact.subtitle')} */}
-            Choosing the right partner for your tech team is critical. At Fantastech, we combine global vision with regional expertise to deliver reliable, scalable, and high-performing IT talent tailored to your project’s needs.
+            {t('taas.whyus.content')}
           </p>
         </div>
 

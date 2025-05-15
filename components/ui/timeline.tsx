@@ -6,6 +6,7 @@ import {
   motion,
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
+import { useLanguage } from '@/context/LanguageContext';
 
 interface TimelineEntry {
   title: string;
@@ -13,6 +14,7 @@ interface TimelineEntry {
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -38,14 +40,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        {/* <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl"> */}
-        <h2 className="text-left text-balance  text-2xl md:text-3xl lg:text-5xl font-semibold tracking-[-0.015em] text-white">
-            Our Process
+        <h2 className="text-left text-balance text-2xl md:text-3xl lg:text-5xl font-semibold tracking-[-0.015em] text-white">
+          {t('taas.process.title')}
         </h2>
-        {/* <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm"> */}
-        <p className="mt-8 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-          <b>We make building your dream team simple and strategic.</b>
-          Our process is designed to be clear, efficient, and human. From understanding your needs to integrating top talent into your workflow, we’re with you every step of the way.
+        <p className="mt-8 max-w-[28rem] text-left text-base/6 text-neutral-200">
+          <b>{t('taas.process.subtitle')}</b><br />
+          {t('taas.process.description')}
         </p>
       </div>
 
