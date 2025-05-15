@@ -7,11 +7,12 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { LanguageSelector } from './LanguageSelector';
 import { useLanguage } from '@/context/LanguageContext';
+import { usePathname } from 'next/navigation';
 
 export const Navbar = () => {
 	const { t, language } = useLanguage();
-	const pathname = window.location.pathname;
-	const isTaasPage = pathname.includes('/taas');
+	const pathname = usePathname();
+	const isTaasPage = pathname?.includes('/taas');
 	
 	const navItems = [
 		{
