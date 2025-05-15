@@ -5,7 +5,7 @@ import Script from 'next/script';
 export const IubendaPolicies = () => {
   return (
     <div className="iubenda-policies">
-      <a 
+      {/* <a 
         href="https://www.iubenda.com/privacy-policy/52417407" 
         className="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
         title="Privacy Policy"
@@ -18,7 +18,7 @@ export const IubendaPolicies = () => {
         title="Cookie Policy"
       >
         Cookie Policy
-      </a>
+      </a> */}
       <Script
         id="iubenda-policy-loader"
         strategy="lazyOnload"

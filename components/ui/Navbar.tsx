@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { IconMenu2, IconX } from "@tabler/icons-react";
+import { IconMenu2, IconX, IconChevronDown } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,29 +8,60 @@ import React, { useState } from "react";
 import { LanguageSelector } from './LanguageSelector';
 import { useLanguage } from '@/context/LanguageContext';
 
-
 export const Navbar = () => {
-	const { t } = useLanguage();
+	const { t, language } = useLanguage();
+	const pathname = window.location.pathname;
+	const isTaasPage = pathname.includes('/taas');
+	
 	const navItems = [
 		{
 			name: t('nav.about'),
-			link: "#about",
+			link: isTaasPage ? `/${language}/#about` : "#about",
 		},
 		{
 			name: t('nav.services'),
-			link: "#services",
+			link: isTaasPage ? `/${language}/#services` : "#services",
+			subItems: [
+				{
+					name: t('services.title_web'),
+					link: isTaasPage ? `/${language}/#services` : "#services",
+				},
+				{
+					name: t('services.title_app'),
+					link: isTaasPage ? `/${language}/#services` : "#services",
+				},
+				{
+					name: t('services.title_cloud'),
+					link: isTaasPage ? `/${language}/#services` : "#services",
+				},
+				{
+					name: t('services.title_uiux'),
+					link: isTaasPage ? `/${language}/#services` : "#services",
+				},
+				{
+					name: t('services.title_datasc'),
+					link: isTaasPage ? `/${language}/#services` : "#services",
+				},
+				{
+					name: t('services.title_digitaltransf'),
+					link: isTaasPage ? `/${language}/#services` : "#services",
+				},
+				{
+					name: "Talent as a Service",
+					link: `/${language}/taas`,
+				},
+			],
 		},
 		{
 			name: t('nav.contact'),
-			link: "#contact",
+			link: isTaasPage ? `/${language}/#contact` : "#contact",
 		},
-  	];
+	];
 
 	return (
-		// <div className="w-full py-10 px-2 fixed z-[1000]">
 		<div className="w-full py-10 px-2 z-[60] absolute ">
-		<DesktopNav navItems={navItems} />
-		<MobileNav navItems={navItems} />
+			<DesktopNav navItems={navItems} />
+			<MobileNav navItems={navItems} />
 		</div>
   	);
 };
@@ -38,10 +69,12 @@ export const Navbar = () => {
 const DesktopNav = ({ navItems }: any) => {
 	const { t } = useLanguage();
 	const [hovered, setHovered] = useState<number | null>(null);
+	const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
   	return (
 		<motion.div
 			onMouseLeave={() => {
 				setHovered(null);
+				setOpenSubmenu(null);
 			}}
 			className={cn(
 				"hidden lg:flex flex-row self-start bg-white dark:bg-black-100 items-center justify-between py-3 max-w-7xl mx-auto px-4 rounded-full relative w-full border border-neutral-100 dark:border-white/[0.2]",
@@ -52,20 +85,49 @@ const DesktopNav = ({ navItems }: any) => {
 	  
 		<div className="lg:flex flex-row flex-1 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-zinc-600 font-medium hover:text-zinc-800 transition duration-200">
 			{navItems.map((navItem: any, idx: number) => (
-			<Link
-				onMouseEnter={() => setHovered(idx)}
-				className="text-neutral-600 dark:text-neutral-300 relative px-4 py-2"
-				key={`link=${idx}`}
-				href={navItem.link}
+			<div
+				key={`nav-item-${idx}`}
+				className="relative"
+				onMouseEnter={() => {
+					setHovered(idx);
+					if (navItem.subItems) setOpenSubmenu(idx);
+				}}
 			>
-				{hovered === idx && (
-				<motion.div
-					layoutId="hovered"
-					className="w-full h-full absolute inset-0 bg-gray-100 dark:bg-black-300 rounded-full"
-				/>
+				<Link
+					className="text-neutral-600 dark:text-neutral-300 relative px-4 py-2 flex items-center gap-1"
+					href={navItem.link}
+				>
+					{hovered === idx && (
+					<motion.div
+						layoutId="hovered"
+						className="w-full h-full absolute inset-0 bg-gray-100 dark:bg-black-300 rounded-full"
+					/>
+					)}
+					<span className="relative z-20">{navItem.name}</span>
+					{navItem.subItems && (
+					<IconChevronDown className="w-4 h-4 relative z-20" />
+					)}
+				</Link>
+				
+				{navItem.subItems && openSubmenu === idx && (
+					<motion.div
+						initial={{ opacity: 0, y: 10 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: 10 }}
+						className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-black-100 rounded-lg shadow-lg border border-neutral-100 dark:border-white/[0.2] py-2"
+					>
+						{navItem.subItems.map((subItem: any, subIdx: number) => (
+							<Link
+								key={`subitem-${subIdx}`}
+								href={subItem.link}
+								className="block px-4 py-2 text-neutral-600 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-black-300"
+							>
+								{subItem.name}
+							</Link>
+						))}
+					</motion.div>
 				)}
-				<span className="relative z-20">{navItem.name}</span>
-			</Link>
+			</div>
 			))}
 		</div>
 		<div className="flex items-center space-x-4">
@@ -87,72 +149,107 @@ const DesktopNav = ({ navItems }: any) => {
 };
 
 const MobileNav = ({ navItems }: any) => {
-  const [open, setOpen] = useState(false);
-  const { t } = useLanguage();
+	const [open, setOpen] = useState(false);
+	const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
+	const { t } = useLanguage();
 
-  return (
-    <>
-      <motion.div
-        animate={{
-          borderRadius: open ? "4px" : "2rem",
-        }}
-        key={String(open)}
-        className="flex relative flex-col lg:hidden w-full justify-between items-center bg-white dark:bg-black-100  max-w-[calc(100vw-2rem)] mx-auto px-4 py-2 border border-neutral-100 dark:border-white/[0.2]"
-      >
-        <div className="flex flex-row justify-between items-center w-full">
-          <Logo />
-          {open ? (
-            <IconX
-              className="text-black dark:text-white"
-              onClick={() => setOpen(!open)}
-            />
-          ) : (
-            <IconMenu2
-              className="text-black dark:text-white"
-              onClick={() => setOpen(!open)}
-            />
-          )}
-        </div>
+	return (
+		<>
+			<motion.div
+				animate={{
+					borderRadius: open ? "4px" : "2rem",
+				}}
+				key={String(open)}
+				className="flex relative flex-col lg:hidden w-full justify-between items-center bg-white dark:bg-black-100  max-w-[calc(100vw-2rem)] mx-auto px-4 py-2 border border-neutral-100 dark:border-white/[0.2]"
+			>
+				<div className="flex flex-row justify-between items-center w-full">
+					<Logo />
+					{open ? (
+						<IconX
+							className="text-black dark:text-white"
+							onClick={() => setOpen(!open)}
+						/>
+					) : (
+						<IconMenu2
+							className="text-black dark:text-white"
+							onClick={() => setOpen(!open)}
+						/>
+					)}
+				</div>
 
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{
-                opacity: 0,
-              }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="flex rounded-lg absolute top-20 bg-white dark:bg-black-100 inset-x-0 z-20 flex-col items-start justify-start gap-4 w-full px-4 py-8 border border-neutral-100 dark:border-white/[0.2]"
-            >
-              {navItems.map((navItem: any, idx: number) => (
-                <Link
-                  key={`link=${idx}`}
-                  href={navItem.link}
-                  className="relative text-neutral-600 dark:text-neutral-300"
-                >
-                  <motion.span className="block">{navItem.name}</motion.span>
-                </Link>
-              ))}
-              <div className="w-full flex flex-col gap-4">
-                <LanguageSelector />
-                <Link href="https://cal.com/fantastech" target="__blank" className="w-full">
-                  <button className="font-medium w-full bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-lg p-px text-sm leading-6  text-white">
-                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                      <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(171,164,183,0.6)_0%,rgba(132,121,150,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    </span>
-                    <div className="relative flex space-x-2 items-center z-10 rounded-lg bg-zinc-950 py-2 px-8 ring-1 ring-white/10 justify-center">
-                      <span>{t('nav.schedule')}</span>
-                    </div>
-                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-purple/0 via-indigo-500/90 to-purple/0 transition-opacity duration-500 group-hover:opacity-40" />
-                  </button>
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
-    </>
-  );
+				<AnimatePresence>
+					{open && (
+						<motion.div
+							initial={{
+								opacity: 0,
+							}}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							className="flex rounded-lg absolute top-20 bg-white dark:bg-black-100 inset-x-0 z-20 flex-col items-start justify-start gap-4 w-full px-4 py-8 border border-neutral-100 dark:border-white/[0.2]"
+						>
+							{navItems.map((navItem: any, idx: number) => (
+								<div key={`nav-item-${idx}`} className="w-full">
+									{navItem.subItems ? (
+										<button
+											onClick={() => setOpenSubmenu(openSubmenu === idx ? null : idx)}
+											className="flex items-center justify-between w-full text-neutral-600 dark:text-neutral-300"
+										>
+											<span>{navItem.name}</span>
+											<IconChevronDown
+												className={`w-4 h-4 transform transition-transform ${
+													openSubmenu === idx ? 'rotate-180' : ''
+												}`}
+											/>
+										</button>
+									) : (
+										<Link
+											href={navItem.link}
+											className="relative text-neutral-600 dark:text-neutral-300"
+										>
+											<motion.span className="block">{navItem.name}</motion.span>
+										</Link>
+									)}
+
+									{navItem.subItems && openSubmenu === idx && (
+										<motion.div
+											initial={{ height: 0 }}
+											animate={{ height: 'auto' }}
+											exit={{ height: 0 }}
+											className="overflow-hidden mt-2 ml-4"
+										>
+											{navItem.subItems.map((subItem: any, subIdx: number) => (
+												<Link
+													key={`subitem-${subIdx}`}
+													href={subItem.link}
+													className="block py-2 text-neutral-600 dark:text-neutral-300"
+												>
+													{subItem.name}
+												</Link>
+											))}
+										</motion.div>
+									)}
+								</div>
+							))}
+							<div className="w-full flex flex-col gap-4">
+								<LanguageSelector />
+								<Link href="https://cal.com/fantastech" target="__blank" className="w-full">
+									<button className="font-medium w-full bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-lg p-px text-sm leading-6  text-white">
+										<span className="absolute inset-0 overflow-hidden rounded-full">
+											<span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(171,164,183,0.6)_0%,rgba(132,121,150,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+										</span>
+										<div className="relative flex space-x-2 items-center z-10 rounded-lg bg-zinc-950 py-2 px-8 ring-1 ring-white/10 justify-center">
+											<span>{t('nav.schedule')}</span>
+										</div>
+										<span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-purple/0 via-indigo-500/90 to-purple/0 transition-opacity duration-500 group-hover:opacity-40" />
+									</button>
+								</Link>
+							</div>
+						</motion.div>
+					)}
+				</AnimatePresence>
+			</motion.div>
+		</>
+	);
 };
 
 const Logo = () => {
