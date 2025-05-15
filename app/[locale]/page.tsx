@@ -3,6 +3,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import { LogosWithBlurFlip } from "@/components/ui/Brands";
 import { Navbar } from "@/components/ui/Navbar";
 
 interface Props {
@@ -17,6 +18,7 @@ export default function Home({ params: { locale } }: Props) {
       <div className="w-full">
         <Navbar />
         <Hero />
+        
         <About />
         <Services />
         <Contact />
