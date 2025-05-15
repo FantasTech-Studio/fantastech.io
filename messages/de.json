@@ -56,5 +56,114 @@
     "privacy_policy": "Datenschutzerklärung",
     "terms_conditios": "Allgemeine Geschäftsbedingungen",
     "copyright": "© Fantastech. Alle Rechte vorbehalten."
+  },
+  "taas": {
+    "hero": {
+      "title_p1": "Starten Sie Ihr Projekt mit den",
+      "title_highlight": "Besten IT-Talenten",
+      "title_p2": "aus",
+      "title_underline": "Lateinamerika",
+      "subtitle_p1": "Wir bieten spezialisierte IT-Fachkräfte in Softwareentwicklung, QA, Projektmanagement und mehr. Ihr",
+      "subtitle_underline": "vertrauenswürdiger Partner",
+      "subtitle_p2": "für Remote-Teams.",
+      "subtitle_p3": "Bereit zum Abheben?",
+      "cta": "Lassen Sie uns Ihr Traumteam aufbauen",
+      "cta2": "Warum uns wählen?",
+      "chat_client": "Hallo! Ich suche einen Frontend-Entwickler mit Erfahrung in React und TypeScript. Können Sie mir helfen?",
+      "chat_ft": "Natürlich! Hier sind einige verifizierte Profile, die bereit sind, Ihrem Team beizutreten."
+    },
+    "whyus": {
+      "title": "Warum Fantastech für IT-Talente wählen?",
+      "content": "Die Wahl des richtigen Partners für Ihr Technologie-Team ist entscheidend. Bei Fantastech kombinieren wir globale Vision mit regionaler Expertise, um zuverlässige, skalierbare und leistungsstarke IT-Talente zu liefern, maßgeschneidert für die Anforderungen Ihres Projekts.",
+      "features": {
+        "global": {
+          "title": "Globale Reichweite, Lokale Expertise",
+          "description": "Mit Fokus auf die USA und Zentraleuropa verbinden wir Märkte mit hoher Nachfrage mit den besten Talenten aus Lateinamerika."
+        },
+        "cost": {
+          "title": "Kosteneffektive Lösungen",
+          "description": "Wir bieten wettbewerbsfähige Preise ohne Qualitätseinbußen und liefern kostengünstige Lösungen ohne Kompromisse bei der Exzellenz."
+        },
+        "communication": {
+          "title": "Fließende Kommunikation, Grenzenlose Zusammenarbeit",
+          "description": "Wir garantieren effektive Kommunikation mit englischsprachigen Talenten, die mit globalen Arbeitskulturen vertraut sind."
+        },
+        "mission": {
+          "title": "Missionsgetriebener Erfolg",
+          "description": "Wir sind dem Erfolg Ihres Projekts verpflichtet. Unsere technischen Führungskräfte bieten Expertenberatung zusammen mit den Talenten, die Sie benötigen, und stellen sicher, dass großangelegte Implementierungen den globalen Best Practices und Deployment-Standards folgen."
+        }
+      }
+    },
+    "services": {
+      "title": "Umfassende IT-Talent-Lösungen",
+      "description": "Von Full-Stack-Ingenieuren bis hin zu Cloud-Architekten und Data Scientists deckt unser Netzwerk jede Rolle ab, die Sie benötigen, um Ihr technisches Team mit Vertrauen zu skalieren.",
+      "developer": {
+        "title": "Softwareentwicklung & Design",
+        "description": "Full-Stack-Entwickler, Front-End & Back-End-Experten, UI/UX-Designer."
+      },
+      "qa": {
+        "title": "QA & Testing",
+        "description": "Erfahrene Fachleute, die robuste, fehlerfreie Software gewährleisten."
+      },
+      "pm": {
+        "title": "Projektmanagement",
+        "description": "Zertifizierte Projektmanager, die agile Arbeitsabläufe verstehen und erfolgreiche Lieferung garantieren."
+      },
+      "cloud": {
+        "title": "Cloud & Fortgeschrittene Technologien",
+        "description": "Spezialisten für AWS, Azure, Google Cloud, DevOps und mehr."
+      },
+      "ai": {
+        "title": "KI & Data Science",
+        "description": "Innovative KI-Profis, bereit Ihre Projekte zu skalieren."
+      }
+    },
+    "process": {
+      "title": "Unser Prozess",
+      "subtitle": "Wir machen den Aufbau Ihres Traumteams einfach und strategisch.",
+      "description": "Unser Prozess ist darauf ausgelegt, klar, effizient und menschlich zu sein. Von der Bedarfsanalyse bis zur Integration der besten Talente in Ihren Arbeitsablauf begleiten wir Sie bei jedem Schritt.",
+      "steps": {
+        "assessment": {
+          "title": "1. Bedarfsanalyse",
+          "description": "Wir beginnen mit Zuhören. Unser Team nimmt sich Zeit, Ihre technischen Ziele, den geschäftlichen Kontext, Teamdynamik und Liefererwartungen zu verstehen. Dieser grundlegende Schritt stellt sicher, dass wir die Talentsuche mit Ihren tatsächlichen Projektanforderungen abstimmen."
+        },
+        "sourcing": {
+          "title": "2. Talentsuche",
+          "description": "Sobald wir den Umfang verstanden haben, greifen wir auf unser kuratiertes Netzwerk vorgeprüfter Fachkräfte zu. Ob Sie ein komplettes Entwicklungsteam oder einen Experten für einen spezifischen Bereich benötigen, wir identifizieren die beste Übereinstimmung in Bezug auf Fähigkeiten, Verfügbarkeit und kulturelle Passung."
+        },
+        "selection": {
+          "title": "3. Auswahl & Onboarding",
+          "description": "Wir unterstützen Sie bei der Bewertung von Kandidaten durch Interviews und technische Tests. Nach der Auswahl managen wir einen reibungslosen Onboarding-Prozess und stellen sicher, dass neue Teammitglieder sich problemlos integrieren und schnell produktiv werden."
+        },
+        "control": {
+          "title": "4. Missionskontrolle",
+          "description": "Unser Engagement endet nicht mit der Einstellung. Sie profitieren von kontinuierlicher Unterstützung, Projektüberwachung und strategischen Follow-ups, geleitet von unseren technischen Führungskräften, die sicherstellen, dass Ihre Implementierung auf Kurs, agil und zukunftssicher bleibt."
+        }
+      }
+    },
+    "benefitsLA": {
+      "title": "Vorteile von IT-Talenten aus Lateinamerika",
+      "description": "Lateinamerika bietet eine einzigartige Kombination aus technischer Exzellenz, kultureller Kompatibilität und strategischer Zeitzonenanpassung - was es zur idealen Region macht, um Ihr Team effizient und effektiv zu skalieren.",
+      "benefits": {
+        "expertise": {
+          "description": "Hohes Niveau an Expertise in modernsten Technologien."
+        },
+        "alignment": {
+          "description": "Kulturelle Ausrichtung mit Teams aus den USA und Europa."
+        },
+        "rates": {
+          "description": "Wettbewerbsfähige Tarife ohne Qualitätseinbußen."
+        },
+        "timezone": {
+          "description": "Zeitzonenvorteile für eine engere Zusammenarbeit."
+        }
+      }
+    },
+    "contact": {
+      "title": "Ihr nächster technologischer Meilenstein beginnt hier.",
+      "description": "Verbinden Sie sich mit uns, um Ihr Projekt schnell und unkompliziert mit erstklassigen Talenten zu besetzen. Lassen Sie uns sprechen oder schreiben Sie uns über WhatsApp",
+      "schedule_meeting": "Termin vereinbaren",
+      "whatsapp": "WhatsApp"
+    }
   }
 }
