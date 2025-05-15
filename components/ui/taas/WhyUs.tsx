@@ -33,15 +33,16 @@ export function FeaturesSectionDemo() {
     },
   ];
   return (
-    <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
+    <div id="why-us-section" className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
         <div className="px-8">
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
             {/* {t('contact.title')} */}
             Why Choose Fantastech for IT Talent?
           </h4>
   
-          <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
+          <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto mb-12 text-neutral-500 text-center font-normal dark:text-neutral-300">
             {/* {t('contact.subtitle')} */}
+            Choosing the right partner for your tech team is critical. At Fantastech, we combine global vision with regional expertise to deliver reliable, scalable, and high-performing IT talent tailored to your project’s needs.
           </p>
         </div>
 

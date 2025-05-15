@@ -19,8 +19,9 @@ export function GlowingEffectDemo() {
             Comprehensive IT Talent Solutions
           </h4>
   
-          <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
+          <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto mb-12 text-neutral-500 text-center font-normal dark:text-neutral-300">
             {/* {t('contact.subtitle')} */}
+            From full-stack engineers to cloud architects and data scientists, our network covers every role you need to scale your tech team with confidence
           </p>
         </div>
     <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">

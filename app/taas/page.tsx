@@ -6,6 +6,9 @@ import { PlayfulHeroSection } from "@/components/ui/taas/PlayfulHeroSection";
 import { FeaturesSectionDemo } from "@/components/ui/taas/WhyUs";
 import { GlowingEffectDemo } from "@/components/ui/taas/Services";
 import { TimelineDemo } from "@/components/ui/taas/OurProcess";
+import { StatsWithGridBackground } from "@/components/ui/taas/BenefitsLA";
+import { Contact } from "lucide-react";
+import { CTAWithBackgroundNoise } from "@/components/ui/taas/Contact";
 
 export default function Taas() {
   const { t, isLoading } = useLanguage();
@@ -22,6 +25,8 @@ export default function Taas() {
         <FeaturesSectionDemo />
         <GlowingEffectDemo />
         <TimelineDemo />
+        <StatsWithGridBackground />
+        <CTAWithBackgroundNoise />
         <Footer />
       </div>
     </main>

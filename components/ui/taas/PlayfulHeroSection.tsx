@@ -15,6 +15,21 @@ const SVGDataURI =
 export function PlayfulHeroSection() {
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToWhyUs = () => {
+    const whyUsSection = document.getElementById('why-us-section');
+    if (whyUsSection) {
+      whyUsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div ref={ref} className="mb-20 pt-48 w-full bg-gray-50 dark:bg-black-100">
       <div className="mx-auto grid max-h-[50rem] max-w-7xl grid-cols-1 items-start gap-10 overflow-hidden pt-10 sm:grid-cols-2 md:max-h-[40rem] md:pt-20 lg:grid-cols-3">
@@ -63,10 +78,16 @@ export function PlayfulHeroSection() {
             </p>
           </RoughNotationGroup>
           <div className="mt-10 flex flex-col items-center gap-4 [perspective:800px] sm:flex-row">
-            <button className="w-full origin-left rounded-lg bg-[#6A3BFF] px-4 py-2 text-base font-bold text-white transition duration-200 hover:shadow-lg hover:[transform:rotateX(10deg)] sm:w-auto">
-              Let’s Build Your Dream Team
+            <button 
+              onClick={scrollToContact}
+              className="w-full origin-left rounded-lg bg-[#6A3BFF] px-4 py-2 text-base font-bold text-white transition duration-200 hover:shadow-lg hover:[transform:rotateX(10deg)] sm:w-auto"
+            >
+              Let's Build Your Dream Team
             </button>
-            <button className="rounded-lg border border-transparent px-4 py-2 text-base text-black transition duration-200 hover:border-[#6A3BFF] dark:text-white">
+            <button 
+              onClick={scrollToWhyUs}
+              className="rounded-lg border border-transparent px-4 py-2 text-base text-black transition duration-200 hover:border-[#6A3BFF] dark:text-white"
+            >
               Why choose us?
             </button>
           </div>
