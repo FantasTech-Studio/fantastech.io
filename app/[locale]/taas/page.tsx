@@ -7,14 +7,23 @@ import { FeaturesSectionDemo } from "@/components/ui/taas/WhyUs";
 import { GlowingEffectDemo } from "@/components/ui/taas/Services";
 import { TimelineDemo } from "@/components/ui/taas/OurProcess";
 import { StatsWithGridBackground } from "@/components/ui/taas/BenefitsLA";
-import { Contact } from "lucide-react";
 import { CTAWithBackgroundNoise } from "@/components/ui/taas/Contact";
+import { useEffect, useState } from 'react';
 
 export default function Taas() {
   const { t, isLoading } = useLanguage();
+  const [isClientReady, setIsClientReady] = useState(false);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  useEffect(() => {
+    setIsClientReady(true);
+  }, []);
+
+  if (isLoading || !isClientReady) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
+      </div>
+    );
   }
 
   return (

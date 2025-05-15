@@ -10,7 +10,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 
 export const Navbar = () => {
-	const { t } = useLanguage();
+	const { t, language } = useLanguage();
 	const navItems = [
 		{
 			name: t('nav.about'),
@@ -26,7 +26,7 @@ export const Navbar = () => {
 		},
 		{
 			name: "TaaS",
-			link: "/taas",
+			link: `/${language}/taas`,
 		},
   	];
 
