@@ -37,15 +37,15 @@ export function CTAWithBackgroundNoise() {
           </p>
 
           <div className="flex flex-col gap-4 w-full mx-auto bg-transparent dark:bg-transparent h-full">
-            <div className="flex gap-4 w-full">
-              <Link href="https://cal.com/fantastech" target="__blank" className="flex-1">
+            <div className="flex flex-col md:flex-row md:gap-4 w-full">
+              <Link href="https://cal.com/fantastech" target="__blank" className="w-full md:flex-1">
                 <button className="mt-8 w-full flex space-x-2 items-center justify-center group text-base px-4 py-2 rounded-lg bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]">
                   <span>{t('taas.contact.schedule_meeting')}</span>
                   <HiArrowRight className="text-white group-hover:translate-x-1 stroke-[1px] h-3 w-3 mt-0.5 transition-transform duration-200" />
                 </button>
               </Link>
-              <Link href="https://wa.me/50223117721" target="__blank" className="flex-1">
-                <button className="mt-8 w-full flex space-x-2 items-center justify-center group text-base px-4 py-2 rounded-lg bg-gradient-to-b from-[#4cfc89] to-[#1ED760] text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]">
+              <Link href="https://wa.me/50223117721" target="__blank" className="w-full md:flex-1">
+                <button className="mt-4 md:mt-8 w-full flex space-x-2 items-center justify-center group text-base px-4 py-2 rounded-lg bg-gradient-to-b from-[#4cfc89] to-[#1ED760] text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]">
                   <span>{t('taas.contact.whatsapp')}</span>
                 </button>
               </Link>
