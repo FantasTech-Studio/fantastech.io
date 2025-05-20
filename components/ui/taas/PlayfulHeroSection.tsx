@@ -32,7 +32,7 @@ export function PlayfulHeroSection() {
   };
 
   return (
-    <div ref={ref} className="mb-20 pt-48 w-full bg-gray-50 dark:bg-black-100">
+    <div ref={ref} className="mb-20 pt-28 md:pt-48 w-full bg-gray-50 dark:bg-black-100">
       <div className="mx-auto grid max-h-[50rem] max-w-7xl grid-cols-1 items-start gap-10 overflow-hidden pt-10 sm:grid-cols-2 md:max-h-[40rem] md:pt-20 lg:grid-cols-3">
         <div className="px-4 py-10 md:px-8 md:py-10 lg:col-span-2">
           <RoughNotationGroup show={isInView}>
