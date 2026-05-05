@@ -1,10 +1,20 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import { useLanguage, languages } from '@/context/LanguageContext';
+import { useRouter, usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
+
+const languages = [
+  { code: 'en', name: '🇺🇸', label: 'English' },
+  { code: 'es', name: '🇪🇸', label: 'Español' },
+  { code: 'it', name: '🇮🇹', label: 'Italiano' },
+  { code: 'de', name: '🇩🇪', label: 'Deutsch' },
+];
 
 export const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { language, setLanguage } = useLanguage();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -13,12 +23,18 @@ export const LanguageSelector = () => {
         setIsOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const currentLanguage = languages.find(lang => lang.code === language);
+  const handleLanguageChange = (newLocale: string) => {
+    const segments = pathname.split('/');
+    segments[1] = newLocale;
+    router.push(segments.join('/'));
+    setIsOpen(false);
+  };
+
+  const currentLanguage = languages.find((lang) => lang.code === locale);
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -36,14 +52,11 @@ export const LanguageSelector = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute lg:right-0 top-full mt-2 left-0 py-2 w-48 bg-white dark:bg-black-100 rounded-lg shadow-xl border border-neutral-100 dark:border-white/[0.2] z-[60]">
+        <div className="absolute left-0 lg:left-auto lg:right-0 top-full mt-2 py-2 w-48 bg-white dark:bg-black-100 rounded-lg shadow-xl border border-neutral-100 dark:border-white/[0.2] z-[60]">
           {languages.map((lang) => (
             <button
               key={lang.code}
-              onClick={() => {
-                setLanguage(lang.code);
-                setIsOpen(false);
-              }}
+              onClick={() => handleLanguageChange(lang.code)}
               className="flex items-center space-x-3 w-full px-4 py-2 text-sm text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-black-300"
             >
               <span className="text-lg">{lang.name}</span>

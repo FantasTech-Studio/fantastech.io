@@ -6,12 +6,12 @@ import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 
 
 export function FeaturesSectionDemo() {
-    const { t, isLoading } = useLanguage();
+    const t = useTranslations();
 
     const features = [
       {
@@ -28,22 +28,18 @@ export function FeaturesSectionDemo() {
       },
     ];
 
-    if (isLoading) {
-      return <div className="py-10 text-center">Loading...</div>;
-    }
-
     return (
       <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto ">
         <div className="px-8">
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
             {t('contact.title')}
           </h4>
-  
+
           <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
             {t('contact.subtitle')}
           </p>
         </div>
-  
+
         <div className="relative">
           <div className="grid grid-cols-1 lg:grid-cols-6 mt-12 xl:border rounded-md dark:border-neutral-800">
             {features.map((feature) => (
@@ -72,7 +68,7 @@ const FeatureCard = ({
       </div>
     );
   };
-  
+
   const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
     return (
       <p className=" max-w-5xl mx-auto text-center lg:text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug">
@@ -80,7 +76,7 @@ const FeatureCard = ({
       </p>
     );
   };
-  
+
   const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
     return (
       <p
@@ -94,11 +90,11 @@ const FeatureCard = ({
       </p>
     );
   };
-  
 
-  
+
+
   export const SkeletonOne = () => {
-    const { t } = useLanguage();
+    const t = useTranslations();
     return (
         <div className="w-full mx-auto bg-transparent dark:bg-transparent group h-full">
             <div className="flex flex-1 w-full h-full flex-col space-y-2 relative mt-4 lg:items-start items-center">
@@ -121,7 +117,7 @@ const FeatureCard = ({
 };
 
 export const SkeletonTwo = () => {
-    const { t } = useLanguage();
+    const t = useTranslations();
     return (
       <div className="h-60 md:h-60 flex flex-col items-center lg:items-start relative bg-transparent dark:bg-transparent mt-4">
         <Link href="https://doc.clickup.com/9006076676/d/h/8ccvmr4-2417/eebc811d1ea7802" target="__blank">
@@ -157,15 +153,15 @@ export const SkeletonTwo = () => {
       </div>
     );
 };
-  
+
   export const Globe = ({ className }: { className?: string }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-  
+
     useEffect(() => {
       let phi = 0;
-  
+
       if (!canvasRef.current) return;
-  
+
       const globe = createGlobe(canvasRef.current, {
         devicePixelRatio: 2,
         width: 600 * 2,
@@ -189,12 +185,12 @@ export const SkeletonTwo = () => {
           phi += 0.01;
         },
       });
-  
+
       return () => {
         globe.destroy();
       };
     }, []);
-  
+
     return (
       <canvas
         ref={canvasRef}
@@ -203,7 +199,7 @@ export const SkeletonTwo = () => {
       />
     );
   };
-  
+
 
 
 export const Contact = () => {
@@ -213,8 +209,3 @@ export const Contact = () => {
     </section>
   )
 }
-
-
-
-
-

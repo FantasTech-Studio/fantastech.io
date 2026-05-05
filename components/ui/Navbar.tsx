@@ -6,56 +6,57 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { LanguageSelector } from './LanguageSelector';
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
 export const Navbar = () => {
-	const { t, language } = useLanguage();
+	const t = useTranslations();
+	const locale = useLocale();
 	const pathname = usePathname();
 	const isTaasPage = pathname?.includes('/taas');
-	
+
 	const navItems = [
 		{
 			name: t('nav.about'),
-			link: isTaasPage ? `/${language}/#about` : "#about",
+			link: isTaasPage ? `/${locale}/#about` : "#about",
 		},
 		{
 			name: t('nav.services'),
-			link: isTaasPage ? `/${language}/#services` : "#services",
+			link: isTaasPage ? `/${locale}/#services` : "#services",
 			subItems: [
 				{
 					name: t('services.title_web'),
-					link: isTaasPage ? `/${language}/#services` : "#services",
+					link: isTaasPage ? `/${locale}/#services` : "#services",
 				},
 				{
 					name: t('services.title_app'),
-					link: isTaasPage ? `/${language}/#services` : "#services",
+					link: isTaasPage ? `/${locale}/#services` : "#services",
 				},
 				{
 					name: t('services.title_cloud'),
-					link: isTaasPage ? `/${language}/#services` : "#services",
+					link: isTaasPage ? `/${locale}/#services` : "#services",
 				},
 				{
 					name: t('services.title_uiux'),
-					link: isTaasPage ? `/${language}/#services` : "#services",
+					link: isTaasPage ? `/${locale}/#services` : "#services",
 				},
 				{
 					name: t('services.title_datasc'),
-					link: isTaasPage ? `/${language}/#services` : "#services",
+					link: isTaasPage ? `/${locale}/#services` : "#services",
 				},
 				{
 					name: t('services.title_digitaltransf'),
-					link: isTaasPage ? `/${language}/#services` : "#services",
+					link: isTaasPage ? `/${locale}/#services` : "#services",
 				},
 				{
 					name: "Talent as a Service",
-					link: `/${language}/taas`,
+					link: `/${locale}/taas`,
 				},
 			],
 		},
 		{
 			name: t('nav.contact'),
-			link: isTaasPage ? `/${language}/#contact` : "#contact",
+			link: isTaasPage ? `/${locale}/#contact` : "#contact",
 		},
 	];
 
@@ -68,7 +69,7 @@ export const Navbar = () => {
 };
 
 const DesktopNav = ({ navItems }: any) => {
-	const { t } = useLanguage();
+	const t = useTranslations();
 	const [hovered, setHovered] = useState<number | null>(null);
 	const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
   	return (
@@ -83,7 +84,7 @@ const DesktopNav = ({ navItems }: any) => {
 			)}
 		>
 	  	<Logo />
-	  
+
 		<div className="lg:flex flex-row flex-1 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-zinc-600 font-medium hover:text-zinc-800 transition duration-200">
 			{navItems.map((navItem: any, idx: number) => (
 			<div
@@ -109,7 +110,7 @@ const DesktopNav = ({ navItems }: any) => {
 					<IconChevronDown className="w-4 h-4 relative z-20" />
 					)}
 				</Link>
-				
+
 				{navItem.subItems && openSubmenu === idx && (
 					<motion.div
 						initial={{ opacity: 0, y: 10 }}
@@ -152,7 +153,7 @@ const DesktopNav = ({ navItems }: any) => {
 const MobileNav = ({ navItems }: any) => {
 	const [open, setOpen] = useState(false);
 	const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
-	const { t } = useLanguage();
+	const t = useTranslations();
 
 	return (
 		<>
@@ -265,7 +266,6 @@ const Logo = () => {
 		width={150}
 		height={100}
 	  />
-	  {/* <span className="font-medium text-black dark:text-white">Fantastech</span> */}
 	</Link>
   );
 };

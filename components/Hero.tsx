@@ -4,18 +4,10 @@ import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import MagicButton from './ui/MagicButton'
 import { IoRocketSharp } from "react-icons/io5";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 const Hero = () => {
-  const { t, isLoading } = useLanguage();
-
-  if (isLoading) {
-    return (
-      <div className='h-screen flex items-center justify-center'>
-        <div className='text-center'>Loading...</div>
-      </div>
-    );
-  }
+  const t = useTranslations();
 
   return (
     <div className='h-screen flex items-center justify-center'>
@@ -30,8 +22,8 @@ const Hero = () => {
 
       <div className='flex justify-center relative my-20 z-10 '>
         <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
-          <TextGenerateEffect 
-            className='text-center text-[40px] md:text-5xl lg:text-6xl' 
+          <TextGenerateEffect
+            className='text-center text-[40px] md:text-5xl lg:text-6xl'
             words={t('hero.title')}
           />
           <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>

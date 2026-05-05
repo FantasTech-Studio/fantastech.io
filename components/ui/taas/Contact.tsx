@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { HiArrowRight } from "react-icons/hi2";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 export function CTAWithBackgroundNoise() {
-  const { t } = useLanguage();
-  
+  const t = useTranslations();
+
   return (
     <section id="contact-section" className="w-full grid grid-cols-1 md:grid-cols-2 my-20 md:my-40 justify-start relative z-20 max-w-7xl mx-auto bg-gradient-to-br from-slate-800 dark:from-black-300 to-black-100 sm:rounded-2xl overflow-hidden">
       <div className="absolute -top-px right-10 md:right-60 bg-gradient-to-r from-transparent via-purple-500 h-px to-transparent w-1/2 z-30"></div>

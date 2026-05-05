@@ -3,11 +3,11 @@ import { cn } from "@/lib/utils";
 import { IconCpu, IconWorldCode, IconRosetteDiscountCheck, IconClockHour7 } from "@tabler/icons-react";
 import React from "react";
 import { useId } from "react";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 export function StatsWithGridBackground() {
-  const { t } = useLanguage();
-  
+  const t = useTranslations();
+
   const items = [
     {
         title: "Years in the business",
@@ -40,7 +40,7 @@ export function StatsWithGridBackground() {
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
             {t('taas.benefitsLA.title')}
           </h4>
-  
+
           <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto mb-12 text-neutral-500 text-center font-normal dark:text-neutral-300">
             {t('taas.benefitsLA.description')}
           </p>

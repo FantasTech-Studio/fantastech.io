@@ -1,0 +1,26 @@
+'use client';
+import { Navbar } from "@/components/ui/Navbar";
+import { Footer } from "@/components/Footer";
+import { PlayfulHeroSection } from "@/components/ui/taas/PlayfulHeroSection";
+import { FeaturesSectionDemo } from "@/components/ui/taas/WhyUs";
+import { GlowingEffectDemo } from "@/components/ui/taas/Services";
+import { TimelineDemo } from "@/components/ui/taas/OurProcess";
+import { StatsWithGridBackground } from "@/components/ui/taas/BenefitsLA";
+import { CTAWithBackgroundNoise } from "@/components/ui/taas/Contact";
+
+export function TaasPageContent() {
+  return (
+    <main className="relative bg-black flex justify-center items-center flex-col overflow-hidden mx-auto w-full dark:bg-black-100">
+      <div className="w-full">
+        <Navbar />
+        <PlayfulHeroSection />
+        <FeaturesSectionDemo />
+        <GlowingEffectDemo />
+        <TimelineDemo />
+        <StatsWithGridBackground />
+        <CTAWithBackgroundNoise />
+        <Footer />
+      </div>
+    </main>
+  );
+}
