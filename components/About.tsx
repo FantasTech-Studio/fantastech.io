@@ -2,20 +2,10 @@
 import React from 'react';
 import { FlipWords } from './ui/FlipWords';
 import { AnimatedTooltip } from './ui/AnimatedTooltip';
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 const About = () => {
-  const { t, isLoading } = useLanguage();
-
-  if (isLoading) {
-    return (
-      <section id='about' className='bg-white dark:bg-black-100 py-20 w-full'>
-        <div className='w-full px-11 md:px-20 lg:px-28'>
-          Loading translations...
-        </div>
-      </section>
-    );
-  }
+  const t = useTranslations();
 
   const words = [
     t('about.pivot1'),
@@ -39,10 +29,10 @@ const About = () => {
       image: "/marco.jpg",
     },
     {
-    	id: 3,
-    	name: "Francisco Rosal",
-    	designation: "Co-Founder",
-    	image: "/francisco.png",
+      id: 3,
+      name: "Francisco Rosal",
+      designation: "Co-Founder",
+      image: "/francisco.png",
     },
     {
       id: 4,
@@ -68,7 +58,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           <div className='flex flex-col justify-center items-start w-full sm:pr-16 md:pr-24'>
             <p className='text-base sm:text-lg md:text-xl lg:text-xl text-neutral-600 dark:text-neutral-400 mb-6 w-full text-center md:text-left'>
               {t('about.description1')}

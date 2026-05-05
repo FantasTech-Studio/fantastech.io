@@ -6,7 +6,7 @@ import {
   motion,
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 interface TimelineEntry {
   title: string;
@@ -14,7 +14,7 @@ interface TimelineEntry {
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
-  const { t } = useLanguage();
+  const t = useTranslations();
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);

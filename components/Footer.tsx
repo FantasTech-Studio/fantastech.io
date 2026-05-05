@@ -10,15 +10,11 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 import { IubendaPolicies } from './IubendaPolicies';
 
 export function Footer() {
-  const { t, isLoading } = useLanguage();
-
-  if (isLoading) {
-    return <div className="w-full py-20 text-center">Loading...</div>;
-  }
+  const t = useTranslations();
 
   const pages = [
     {
@@ -148,7 +144,6 @@ const Logo = () => {
 				width={200}
 				height={100}
 			/>
-	  		{/* <span className="font-medium text-black dark:text-white">Fantastech</span> */}
 		</Link>
 	);
 };

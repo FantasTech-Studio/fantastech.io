@@ -1,3 +1,4 @@
+'use client';
 import { cn } from "@/lib/utils";
 import {
   IconCurrencyDollar,
@@ -5,11 +6,11 @@ import {
   IconUsersGroup,
   IconTargetArrow
 } from "@tabler/icons-react";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 export function FeaturesSectionDemo() {
-  const { t } = useLanguage();
-  
+  const t = useTranslations();
+
   const features = [
     {
       title: t('taas.whyus.features.global.title'),
@@ -38,7 +39,7 @@ export function FeaturesSectionDemo() {
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
             {t('taas.whyus.title')}
           </h4>
-  
+
           <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto mb-12 text-neutral-500 text-center font-normal dark:text-neutral-300">
             {t('taas.whyus.content')}
           </p>
@@ -69,7 +70,6 @@ const Feature = ({
       className={cn(
         "flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800",
         (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
-        // index < 4 && "lg:border-b dark:border-neutral-800"
       )}
     >
       {index < 4 && (

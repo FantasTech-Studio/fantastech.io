@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { animate, stagger, useInView } from "motion/react";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -13,7 +13,7 @@ const SVGDataURI =
   "data:image/svg+xml;base64,IDxzdmcKICAgICAgd2lkdGg9IjQyMSIKICAgICAgaGVpZ2h0PSI4NTIiCiAgICAgIHZpZXdCb3g9IjAgMCA0MjEgODUyIgogICAgICBmaWxsPSJub25lIgogICAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICA+CiAgICAgIDxwYXRoCiAgICAgICAgZmlsbC1ydWxlPSJldmVub2RkIgogICAgICAgIGNsaXAtcnVsZT0iZXZlbm9kZCIKICAgICAgICBkPSJNNzMgMEgzNDhDMzg2LjY2IDAgNDE4IDMxLjM0MDEgNDE4IDcwVjc4MkM0MTggODIwLjY2IDM4Ni42NiA4NTIgMzQ4IDg1Mkg3M0MzNC4zNDAxIDg1MiAzIDgyMC42NiAzIDc4MlY3MEMzIDMxLjM0MDEgMzQuMzQwMSAwIDczIDBaTTM0OCA2SDczQzM3LjY1MzggNiA5IDM0LjY1MzggOSA3MFY3ODJDOSA4MTcuMzQ2IDM3LjY1MzggODQ2IDczIDg0NkgzNDhDMzgzLjM0NiA4NDYgNDEyIDgxNy4zNDYgNDEyIDc4MlY3MEM0MTIgMzQuNjUzOCAzODMuMzQ2IDYgMzQ4IDZaIgogICAgICAgIGZpbGw9ImJsYWNrIgogICAgICAvPgogICAgICA8cmVjdAogICAgICAgIHg9IjMxOCIKICAgICAgICB3aWR0aD0iMTAiCiAgICAgICAgaGVpZ2h0PSI2IgogICAgICAgIGZpbGw9ImJsYWNrIgogICAgICAgIGZpbGwtb3BhY2l0eT0iMC4yIgogICAgICAvPgogICAgICA8cmVjdAogICAgICAgIHg9IjkzIgogICAgICAgIHk9Ijg0NiIKICAgICAgICB3aWR0aD0iMTAiCiAgICAgICAgaGVpZ2h0PSI2IgogICAgICAgIGZpbGw9ImJsYWNrIgogICAgICAgIGZpbGwtb3BhY2l0eT0iMC4yIgogICAgICAvPgogICAgICA8cmVjdAogICAgICAgIHg9IjMiCiAgICAgICAgeT0iOTAiCiAgICAgICAgd2lkdGg9IjYiCiAgICAgICAgaGVpZ2h0PSIxMCIKICAgICAgICBmaWxsPSJibGFjayIKICAgICAgICBmaWxsLW9wYWNpdHk9IjAuMiIKICAgICAgLz4KICAgICAgPHJlY3QKICAgICAgICB4PSI0MTIiCiAgICAgICAgeT0iOTAiCiAgICAgICAgd2lkdGg9IjYiCiAgICAgICAgaGVpZ2h0PSIxMCIKICAgICAgICBmaWxsPSJibGFjayIKICAgICAgICBmaWxsLW9wYWNpdHk9IjAuMiIKICAgICAgLz4KICAgICAgPHJlY3QKICAgICAgICB4PSIzIgogICAgICAgIHk9Ijc1MiIKICAgICAgICB3aWR0aD0iNiIKICAgICAgICBoZWlnaHQ9IjEwIgogICAgICAgIGZpbGw9ImJsYWNrIgogICAgICAgIGZpbGwtb3BhY2l0eT0iMC4yIgogICAgICAvPgogICAgICA8cmVjdAogICAgICAgIHg9IjQxMiIKICAgICAgICB5PSI3NTIiCiAgICAgICAgd2lkdGg9IjYiCiAgICAgICAgaGVpZ2h0PSIxMCIKICAgICAgICBmaWxsPSJibGFjayIKICAgICAgICBmaWxsLW9wYWNpdHk9IjAuMiIKICAgICAgLz4KICAgICAgPHBhdGgKICAgICAgICBmaWxsLXJ1bGU9ImV2ZW5vZGQiCiAgICAgICAgY2xpcC1ydWxlPSJldmVub2RkIgogICAgICAgIGQ9Ik00MTcuOTcxIDI2Nkg0MTguOTgxQzQyMC4wOTYgMjY2IDQyMSAyNjYuODk1IDQyMSAyNjhWMzY0QzQyMSAzNjUuMTA1IDQyMC4wOTYgMzY2IDQxOC45ODEgMzY2SDQxNy45NzFWMjY2WiIKICAgICAgICBmaWxsPSJibGFjayIKICAgICAgLz4KICAgICAgPHBhdGgKICAgICAgICBmaWxsLXJ1bGU9ImV2ZW5vZGQiCiAgICAgICAgY2xpcC1ydWxlPSJldmVub2RkIgogICAgICAgIGQ9Ik0wIDMwMkMwIDMwMC44OTUgMC45MDQwMiAzMDAgMi4wMTkxOCAzMDBIMy4wMjg3OFYzNjNIMi4wMTkxOEMwLjkwNDAyIDM2MyAwIDM2Mi4xMDUgMCAzNjFWMzAyWiIKICAgICAgICBmaWxsPSJibGFjayIKICAgICAgLz4KICAgICAgPHBhdGgKICAgICAgICBmaWxsLXJ1bGU9ImV2ZW5vZGQiCiAgICAgICAgY2xpcC1ydWxlPSJldmVub2RkIgogICAgICAgIGQ9Ik0wIDIyM0MwIDIyMS44OTUgMC45MDQwMiAyMjEgMi4wMTkxOCAyMjFIMy4wMjg3OFYyODRIMi4wMTkxOEMwLjkwNDAyIDI4NCAwIDI4My4xMDUgMCAyODJWMjIzWiIKICAgICAgICBmaWxsPSJibGFjayIKICAgICAgLz4KICAgICAgPHBhdGgKICAgICAgICBmaWxsLXJ1bGU9ImV2ZW5vZGQiCiAgICAgICAgY2xpcC1ydWxlPSJldmVub2RkIgogICAgICAgIGQ9Ik0wIDE2MkMwIDE2MC44OTUgMC45MDQwMiAxNjAgMi4wMTkxOCAxNjBIMy4wMjg3OFYxOTNIMi4wMTkxOEMwLjkwNDAyIDE5MyAwIDE5Mi4xMDUgMCAxOTFWMTYyWiIKICAgICAgICBmaWxsPSJibGFjayIKICAgICAgLz4KICAgICAgPHJlY3QKICAgICAgICB4PSIxNTAiCiAgICAgICAgeT0iMzAiCiAgICAgICAgd2lkdGg9IjEyMCIKICAgICAgICBoZWlnaHQ9IjM1IgogICAgICAgIHJ4PSIxNy41IgogICAgICAgIGZpbGw9ImJsYWNrIgogICAgICAvPgogICAgICA8cmVjdAogICAgICAgIHg9IjI0NCIKICAgICAgICB5PSI0MSIKICAgICAgICB3aWR0aD0iMTMiCiAgICAgICAgaGVpZ2h0PSIxMyIKICAgICAgICByeD0iNi41IgogICAgICAgIGZpbGw9ImJsYWNrIgogICAgICAgIGZpbGwtb3BhY2l0eT0iMC4xIgogICAgICAvPgogICAgPC9zdmc+";
 
 export function PlayfulHeroSection() {
-  const { t } = useLanguage();
+  const t = useTranslations();
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -78,13 +78,13 @@ export function PlayfulHeroSection() {
             </p>
           </RoughNotationGroup>
           <div className="mt-10 flex flex-col items-center gap-4 [perspective:800px] sm:flex-row">
-            <button 
+            <button
               onClick={scrollToContact}
               className="w-full origin-left rounded-lg bg-[#6A3BFF] px-4 py-2 text-base font-bold text-white transition duration-200 hover:shadow-lg hover:[transform:rotateX(10deg)] sm:w-auto"
             >
               {t('taas.hero.cta')}
             </button>
-            <button 
+            <button
               onClick={scrollToWhyUs}
               className="rounded-lg border border-transparent px-4 py-2 text-base text-black transition duration-200 hover:border-[#6A3BFF] dark:text-white"
             >
@@ -101,7 +101,7 @@ export function PlayfulHeroSection() {
 }
 
 export const Skeleton = () => {
-  const { t } = useLanguage();
+  const t = useTranslations();
   const ref = useRef(null);
   const isInView = useInView(ref);
   useEffect(() => {
@@ -194,53 +194,12 @@ export const MobileMockup = ({ className }: { className?: string }) => {
         d="M73 0H348C386.66 0 418 31.3401 418 70V782C418 820.66 386.66 852 348 852H73C34.3401 852 3 820.66 3 782V70C3 31.3401 34.3401 0 73 0ZM348 6H73C37.6538 6 9 34.6538 9 70V782C9 817.346 37.6538 846 73 846H348C383.346 846 412 817.346 412 782V70C412 34.6538 383.346 6 348 6Z"
         fill="currentColor"
       />
-      <rect
-        x="318"
-        width="10"
-        height="6"
-        fill="currentColor"
-        fillOpacity="0.2"
-      />
-      <rect
-        x="93"
-        y="846"
-        width="10"
-        height="6"
-        fill="currentColor"
-        fillOpacity="0.2"
-      />
-      <rect
-        x="3"
-        y="90"
-        width="6"
-        height="10"
-        fill="currentColor"
-        fillOpacity="0.2"
-      />
-      <rect
-        x="412"
-        y="90"
-        width="6"
-        height="10"
-        fill="currentColor"
-        fillOpacity="0.2"
-      />
-      <rect
-        x="3"
-        y="752"
-        width="6"
-        height="10"
-        fill="currentColor"
-        fillOpacity="0.2"
-      />
-      <rect
-        x="412"
-        y="752"
-        width="6"
-        height="10"
-        fill="currentColor"
-        fillOpacity="0.2"
-      />
+      <rect x="318" width="10" height="6" fill="currentColor" fillOpacity="0.2" />
+      <rect x="93" y="846" width="10" height="6" fill="currentColor" fillOpacity="0.2" />
+      <rect x="3" y="90" width="6" height="10" fill="currentColor" fillOpacity="0.2" />
+      <rect x="412" y="90" width="6" height="10" fill="currentColor" fillOpacity="0.2" />
+      <rect x="3" y="752" width="6" height="10" fill="currentColor" fillOpacity="0.2" />
+      <rect x="412" y="752" width="6" height="10" fill="currentColor" fillOpacity="0.2" />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -265,23 +224,8 @@ export const MobileMockup = ({ className }: { className?: string }) => {
         d="M0 162C0 160.895 0.90402 160 2.01918 160H3.02878V193H2.01918C0.90402 193 0 192.105 0 191V162Z"
         fill="currentColor"
       />
-      <rect
-        x="150"
-        y="30"
-        width="120"
-        height="35"
-        rx="17.5"
-        fill="currentColor"
-      />
-      <rect
-        x="244"
-        y="41"
-        width="13"
-        height="13"
-        rx="6.5"
-        fill="currentColor"
-        fillOpacity="0.1"
-      />
+      <rect x="150" y="30" width="120" height="35" rx="17.5" fill="currentColor" />
+      <rect x="244" y="41" width="13" height="13" rx="6.5" fill="currentColor" fillOpacity="0.1" />
     </svg>
   );
 };

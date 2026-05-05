@@ -3,11 +3,11 @@
 import { Timeline } from "@/components/ui/timeline";
 import { ClipboardList, Users, UserCheck, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 export function TimelineDemo() {
-  const { t } = useLanguage();
-  
+  const t = useTranslations();
+
   const data = [
     {
       title: t('taas.process.steps.assessment.title'),

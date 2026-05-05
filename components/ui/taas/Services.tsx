@@ -1,6 +1,5 @@
 "use client";
 
-import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
 import {
     IconCode,
     IconZoomCode,
@@ -9,18 +8,18 @@ import {
     IconAi
 } from "@tabler/icons-react";
 import { GlowingEffect } from "@/components/ui/GlowingEffect";
-import { useLanguage } from '@/context/LanguageContext';
+import { useTranslations } from 'next-intl';
 
 export function GlowingEffectDemo() {
-  const { t } = useLanguage();
-  
+  const t = useTranslations();
+
   return (
     <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
         <div className="px-8">
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
             {t('taas.services.title')}
           </h4>
-  
+
           <p className="text-sm lg:text-base max-w-2xl my-4 mx-auto mb-12 text-neutral-500 text-center font-normal dark:text-neutral-300">
             {t('taas.services.description')}
           </p>
