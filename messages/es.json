@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Software y Soluciones de IA en Guatemala | Fantastech",
+    "description": "Fantastech desarrolla software personalizado e integraciones de IA para empresas en Guatemala. Implementamos y auditamos flujos de trabajo con IA."
+  },
   "nav": {
     "about": "Nosotros",
     "services": "Servicios",
@@ -23,6 +27,10 @@
   },
   "services": {
     "title": "Nuestros servicios",
+    "title_ai_impl": "Diseño e Implementación de Flujos de Trabajo con IA",
+    "description_ai_impl": "Diseñamos e implementamos flujos de trabajo con IA de extremo a extremo, adaptados a tu negocio. Desde OpenAI, Anthropic y Google hasta modelos opensource alojados localmente. Construimos pipelines inteligentes que se integran con tus sistemas actuales y escalan contigo.",
+    "title_ai_audit": "Auditorías de Flujos de Trabajo con IA",
+    "description_ai_audit": "¿Ya usas IA en tus operaciones? Auditamos tus flujos de trabajo y procesos de IA para identificar ineficiencias, riesgos y oportunidades sin explotar. Recibirás un diagnóstico claro y una hoja de ruta accionable para optimizar el rendimiento y maximizar el ROI.",
     "title_web": "Soluciones Web",
     "description_web": "Creamos experiencias web que van más allá de lo ordinario. Con nuestro equipo experto, diseñamos y desarrollamos sitios web y plataformas que no solo se ven increíbles, sino que están construidos para funcionar de manera impecable. Desde tiendas en línea hasta portales corporativos, nuestras soluciones web están hechas a la medida, garantizando que tu presencia digital sea tan única como tu negocio.",
     "title_app": "Aplicaciones Móviles",
