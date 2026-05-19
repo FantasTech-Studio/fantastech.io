@@ -18,8 +18,8 @@ export async function generateMetadata({ params: { locale } }: Props): Promise<M
 
   return {
     metadataBase: new URL(base),
-    title: messages.hero.title,
-    description: messages.hero.subtitle,
+    title: messages.metadata.title,
+    description: messages.metadata.description,
     alternates: {
       canonical: `/${locale}`,
       languages: Object.fromEntries([

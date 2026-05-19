@@ -10,6 +10,18 @@ const Services = () => {
 
 	const services = [
 		{
+			title: t('services.title_ai_impl'),
+			description: t('services.description_ai_impl'),
+		},
+		{
+			title: t('services.title_ai_audit'),
+			description: t('services.description_ai_audit'),
+		},
+		{
+			title: t('services.title_digitaltransf'),
+			description: t('services.description_digitaltransf'),
+		},
+		{
 			title: t('services.title_web'),
 			description: t('services.description_web'),
 		},
@@ -29,10 +41,6 @@ const Services = () => {
 			title: t('services.title_datasc'),
 			description: t('services.description_datasc'),
 		},
-		{
-			title: t('services.title_digitaltransf'),
-			description: t('services.description_digitaltransf'),
-		}
 	];
 
 	return (

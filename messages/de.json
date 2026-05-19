@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Software & KI-Lösungen Guatemala | Fantastech",
+    "description": "Fantastech entwickelt individuelle Software und KI-Integrationen für Unternehmen in Guatemala. Wir implementieren und auditieren KI-Workflows. Guatemala-Stadt und Mailand."
+  },
   "nav": {
     "about": "Über Uns",
     "services": "Dienstleistungen",
@@ -23,6 +27,10 @@
   },
   "services": {
     "title": "Unsere Dienstleistungen",
+    "title_ai_impl": "KI-Workflow-Design & Implementierung",
+    "description_ai_impl": "Wir entwerfen und implementieren maßgeschneiderte KI-Workflows für Ihr Unternehmen. Von OpenAI, Anthropic und Google bis hin zu lokal gehosteten Open-Source-Modellen entwickeln wir intelligente Pipelines, die sich nahtlos in Ihre bestehenden Systeme integrieren und mit Ihnen wachsen.",
+    "title_ai_audit": "KI-Workflow-Audits",
+    "description_ai_audit": "Setzen Sie KI bereits in Ihren Prozessen ein? Wir auditieren Ihre bestehenden KI-Workflows und identifizieren Ineffizienzen, Risiken und ungenutztes Potenzial. Sie erhalten eine klare Diagnose und eine umsetzbare Roadmap zur Leistungsoptimierung und ROI-Maximierung.",
     "title_web": "Weblösungen",
     "description_web": "Wir schaffen Weberlebnisse, die über das Gewöhnliche hinausgehen. Mit unserem Expertenteam gestalten und entwickeln wir Websites und Plattformen, die nicht nur fantastisch aussehen, sondern auch einwandfrei funktionieren. Von Online-Shops bis hin zu Unternehmensportalen sind unsere Weblösungen maßgeschneidert und gewährleisten, dass Ihre digitale Präsenz so einzigartig ist wie Ihr Unternehmen.",
     "title_app": "Mobile Anwendungen",

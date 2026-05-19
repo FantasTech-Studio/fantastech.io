@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Software e Soluzioni AI in Guatemala | Fantastech",
+    "description": "Fantastech sviluppa software personalizzato e integrazioni AI per aziende in Guatemala. Implementiamo e auditing flussi di lavoro AI. Guatemala City e Milano."
+  },
   "nav": {
     "about": "Chi Siamo",
     "services": "Servizi",
@@ -23,6 +27,10 @@
   },
   "services": {
     "title": "I Nostri Servizi",
+    "title_ai_impl": "Progettazione e Implementazione di Workflow AI",
+    "description_ai_impl": "Progettiamo e implementiamo workflow AI end-to-end su misura per la tua azienda. Da OpenAI, Anthropic e Google ai modelli open-source ospitati localmente, costruiamo pipeline intelligenti che si integrano con i tuoi sistemi esistenti e crescono con te.",
+    "title_ai_audit": "Audit dei Workflow AI",
+    "description_ai_audit": "Usi già l'AI nelle tue operazioni? Eseguiamo un audit dei tuoi workflow e processi AI per identificare inefficienze, rischi e potenziale inespresso. Riceverai una diagnosi chiara e una roadmap operativa per ottimizzare le performance e massimizzare il ROI.",
     "title_web": "Soluzioni Web",
     "description_web": "Creiamo esperienze web che vanno oltre l'ordinario. Con il nostro team di esperti, progettiamo e sviluppiamo siti web e piattaforme che non solo appaiono straordinari, ma sono costruiti per funzionare in modo impeccabile. Dagli e-commerce ai portali aziendali, le nostre soluzioni web sono su misura, garantendo che la tua presenza digitale sia unica come la tua azienda.",
     "title_app": "Applicazioni Mobile",
