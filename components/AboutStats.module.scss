@@ -1,0 +1,42 @@
+.stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.75rem 2.75rem;
+	width: 100%;
+	justify-content: center;
+
+	@media (min-width: 768px) {
+		justify-content: flex-start;
+	}
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.35rem;
+
+	@media (min-width: 768px) {
+		align-items: flex-start;
+	}
+}
+
+.value {
+	font-size: 2.25rem;
+	font-weight: 600;
+	line-height: 1;
+	color: #1c1c1c;
+
+	:global(.dark) & {
+		color: #f5f5f5;
+	}
+}
+
+.label {
+	font-size: 0.875rem;
+	color: #525252;
+
+	:global(.dark) & {
+		color: #a3a3a3;
+	}
+}

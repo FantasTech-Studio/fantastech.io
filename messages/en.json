@@ -23,7 +23,15 @@
     "pivot5": "impactful",
     "title_p2": "and transform your business with Fantastech",
     "description1": "At Fantastech, we take pride in being agile, innovative, and bold. Headquartered in the vibrant tech hub of Guatemala City, our global team of experts creates intelligent software solutions, designed to grow and adapt to your business needs as it evolves. Whether you're a startup seeking innovation or an established company needing digital transformation, we're here to align your technology with your vision.",
-    "description2": "We are passionate about understanding your unique challenges and designing tailored solutions that drive your long-term success. At Fantastech, we don't just develop software; we create technological experiences that empower your business's future."
+    "description2": "We are passionate about understanding your unique challenges and designing tailored solutions that drive your long-term success. At Fantastech, we don't just develop software; we create technological experiences that empower your business's future.",
+    "stats": {
+      "projects_value": "250",
+      "projects_label": "Digitalized projects",
+      "uptime_value": "99.9%",
+      "uptime_label": "Implemented systems uptime",
+      "users_value": "+5000",
+      "users_label": "End users on our platforms"
+    }
   },
   "services": {
     "title": "Our Services",
@@ -56,15 +64,15 @@
     "wwu_cta": "View Open Positions"
   },
   "footer": {
-      "about": "About",
-      "services": "Services",
-      "clients": "Clients",
-      "contact": "Contact",
-      "work_with_us": "Work With Us",
-      "privacy_policy": "Privacy Policy",
-      "cookie_policy": "Cookie Policy",
-      "terms_conditios": "Terms and Conditions",
-      "copyright": "© Fantastech. All rights reserved."
+    "about": "About",
+    "services": "Services",
+    "clients": "Clients",
+    "contact": "Contact",
+    "work_with_us": "Work With Us",
+    "privacy_policy": "Privacy Policy",
+    "cookie_policy": "Cookie Policy",
+    "terms_conditios": "Terms and Conditions",
+    "copyright": "© Fantastech. All rights reserved."
   },
   "taas": {
     "hero": {

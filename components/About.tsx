@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { FlipWords } from "./ui/FlipWords";
-import { AnimatedTooltip } from "./ui/AnimatedTooltip";
+import AboutStats from "./AboutStats";
 import { useTranslations } from "next-intl";
 
 const About = () => {
@@ -13,27 +13,6 @@ const About = () => {
 		t("about.pivot3"),
 		t("about.pivot4"),
 		t("about.pivot5"),
-	];
-
-	const people = [
-		{
-			id: 2,
-			name: "Marco Fuentes",
-			designation: "Co-Founder",
-			image: "/marco.jpg",
-		},
-		{
-			id: 3,
-			name: "Francisco Rosal",
-			designation: "Co-Founder",
-			image: "/francisco.png",
-		},
-		{
-			id: 4,
-			name: "Gian Luca Rivera",
-			designation: "Co-Founder",
-			image: "/luca.png",
-		},
 	];
 
 	return (
@@ -48,7 +27,7 @@ const About = () => {
 						</div>
 						<div className="flex flex-col justify-center items-center md:items-start w-full">
 							<div className="flex flex-row items-center md:justify-start lg:justify-start justify-center mb-10 w-full">
-								<AnimatedTooltip items={people} />
+								<AboutStats />
 							</div>
 						</div>
 					</div>
