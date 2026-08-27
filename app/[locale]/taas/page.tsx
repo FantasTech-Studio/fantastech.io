@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { TaasPageContent } from "@/components/ui/taas/TaasPageContent";
 
-const locales = ['en', 'es', 'it', 'de'] as const;
+const locales = ['en', 'es', 'de'] as const;
 const base = 'https://fantastech.io';
 
 interface Props {

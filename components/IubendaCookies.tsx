@@ -17,9 +17,24 @@ export const IubendaCookies = () => {
               "lang":"en",
               "storage":{"useSiteId":true},
               "banner":{
+                "position":"float-bottom-center",
                 "acceptButtonDisplay":true,
                 "customizeButtonDisplay":true,
-                "position":"float-bottom-center"
+                "rejectButtonDisplay":true,
+                "closeButtonRejects":true,
+                "backgroundOverlay":false,
+                "applyStyles":true,
+                "fontSizeBody":"14px",
+                "backgroundColor":"#000319",
+                "textColor":"#FFFFFF",
+                "brandBackgroundColor":"#000319",
+                "brandTextColor":"#FFFFFF",
+                "acceptButtonColor":"#CBACF9",
+                "acceptButtonCaptionColor":"#000319",
+                "customizeButtonColor":"#161A31",
+                "customizeButtonCaptionColor":"#BEC1DD",
+                "rejectButtonColor":"#161A31",
+                "rejectButtonCaptionColor":"#BEC1DD"
               }
             };
           `,

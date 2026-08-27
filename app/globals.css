@@ -87,3 +87,36 @@
     background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
   }
 }
+
+/* Iubenda cookie banner — pin to the site palette.
+   Positioning is left to Iubenda's own "float-bottom-center" mode. Iubenda's dashboard
+   theme injects its own !important rules (plus an inline style on .iubenda-cs-content),
+   so these overrides carry extra class qualifiers to win the cascade. The card body
+   background stays Iubenda's near-black #000 (set inline, not overridable from CSS) —
+   visually identical to the site's #000319. Markup is injected into <body>, outside React. */
+#iubenda-cs-banner .iubenda-cs-container.iubenda-cs-themed {
+  max-width: 640px !important;
+  margin: 0 auto !important;
+}
+#iubenda-cs-banner .iubenda-cs-container .iubenda-cs-content {
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55) !important;
+}
+#iubenda-cs-banner .iubenda-cs-container.iubenda-cs-themed .iubenda-cs-opt-group button {
+  border-radius: 8px !important;
+  font-family: inherit !important;
+}
+#iubenda-cs-banner .iubenda-cs-container.iubenda-cs-themed .iubenda-cs-opt-group button.iubenda-cs-accept-btn {
+  background-color: #cbacf9 !important; /* purple */
+  color: #000319 !important;
+}
+#iubenda-cs-banner .iubenda-cs-container.iubenda-cs-themed .iubenda-cs-opt-group button.iubenda-cs-reject-btn {
+  background-color: #232842 !important;
+  color: #e6e8f5 !important;
+}
+#iubenda-cs-banner .iubenda-cs-container.iubenda-cs-themed .iubenda-cs-opt-group button.iubenda-cs-customize-btn {
+  background-color: transparent !important;
+  color: #bec1dd !important;
+  text-decoration: underline !important;
+}

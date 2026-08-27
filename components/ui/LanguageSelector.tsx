@@ -6,7 +6,6 @@ import { useLocale } from 'next-intl';
 const languages = [
   { code: 'en', name: '🇺🇸', label: 'English' },
   { code: 'es', name: '🇪🇸', label: 'Español' },
-  { code: 'it', name: '🇮🇹', label: 'Italiano' },
   { code: 'de', name: '🇩🇪', label: 'Deutsch' },
 ];
 

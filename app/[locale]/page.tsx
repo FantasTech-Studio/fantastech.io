@@ -6,7 +6,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import { Navbar } from "@/components/ui/Navbar";
 
-const locales = ['en', 'es', 'it', 'de'] as const;
+const locales = ['en', 'es', 'de'] as const;
 const base = 'https://fantastech.io';
 
 interface Props {

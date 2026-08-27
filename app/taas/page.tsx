@@ -6,7 +6,7 @@ export default function TaasRootPage() {
   const router = useRouter();
   useEffect(() => {
     const lang = navigator.language.split('-')[0];
-    const supported = ['en', 'es', 'it', 'de'];
+    const supported = ['en', 'es', 'de'];
     router.replace(`/${supported.includes(lang) ? lang : 'en'}/taas`);
   }, [router]);
   return null;

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const base = 'https://fantastech.io';
-const locales = ['en', 'es', 'it', 'de'];
+const locales = ['en', 'es', 'de'];
 const paths = ['', '/taas'];
 
 export default function sitemap(): MetadataRoute.Sitemap {

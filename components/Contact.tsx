@@ -1,10 +1,6 @@
 'use client'
 import React from 'react'
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import createGlobe from "cobe";
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from 'next-intl';
 
@@ -119,7 +115,7 @@ const FeatureCard = ({
 export const SkeletonTwo = () => {
     const t = useTranslations();
     return (
-      <div className="h-60 md:h-60 flex flex-col items-center lg:items-start relative bg-transparent dark:bg-transparent mt-4">
+      <div className="flex flex-col items-center lg:items-start bg-transparent dark:bg-transparent mt-4">
         <Link href="https://doc.clickup.com/9006076676/d/h/8ccvmr4-2417/eebc811d1ea7802" target="__blank">
             <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-lg p-px text-xs font-semibold leading-6 text-white inline-block">
                 <span className="absolute inset-0 overflow-hidden rounded-lg">
@@ -148,59 +144,9 @@ export const SkeletonTwo = () => {
                 <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
             </button>
         </Link>
-
-        <Globe className="absolute -right-40 md:-right-40 -bottom-80 md:-bottom-72" />
       </div>
     );
 };
-
-  export const Globe = ({ className }: { className?: string }) => {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-
-    useEffect(() => {
-      let phi = 0;
-
-      if (!canvasRef.current) return;
-
-      const globe = createGlobe(canvasRef.current, {
-        devicePixelRatio: 2,
-        width: 600 * 2,
-        height: 600 * 2,
-        phi: 0,
-        theta: 0,
-        dark: 1,
-        diffuse: 1.2,
-        mapSamples: 16000,
-        mapBrightness: 6,
-        baseColor: [0.3, 0.3, 0.3],
-        markerColor: [0.1, 0.8, 1],
-        glowColor: [1, 1, 1],
-        markers: [
-          // longitude latitude
-          { location: [45.46427, 9.18951], size: 0.05 },
-          { location: [14.64072, -90.51327], size: 0.05 },
-        ],
-        onRender: (state) => {
-          state.phi = phi;
-          phi += 0.01;
-        },
-      });
-
-      return () => {
-        globe.destroy();
-      };
-    }, []);
-
-    return (
-      <canvas
-        ref={canvasRef}
-        style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1, transition: 'opacity 3s ease', }}
-        className={className}
-      />
-    );
-  };
-
-
 
 export const Contact = () => {
   return (

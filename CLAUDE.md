@@ -13,13 +13,15 @@ npm run lint     # Run ESLint
 
 No test framework is configured.
 
+The static export output directory `out/` **is committed to the repo** (it is not gitignored — see commits like "feat: update build files"). After changing anything user-facing, run `npm run build` and commit the regenerated `out/` alongside the source change.
+
 ## Architecture Overview
 
 This is a **Next.js 14 App Router** marketing website for Fantastech, statically exported (`output: 'export'` in `next.config.mjs`). Image optimization is disabled due to static export.
 
 ### Routing
 
-Uses dynamic `[locale]` segments for internationalization. Supported locales: `en`, `es`, `it`, `de`.
+Uses dynamic `[locale]` segments for internationalization. Supported locales: `en`, `es`, `de`.
 
 - `/` and `/[locale]/` → homepage
 - `/taas` and `/[locale]/taas` → Talent as a Service product page
@@ -41,6 +43,12 @@ For the current locale in client components: `useLocale()` from `next-intl`.
 
 Language switching is handled by `LanguageSelector` using `useRouter().push()` with the new locale segment.
 
+**Adding a locale** requires updating the hardcoded locale list in all of these places (plus adding `messages/{locale}.json`):
+- `i18n/request.ts` — `locales` array
+- `app/page.tsx` and `app/taas/page.tsx` — `supported` array used by the client-side redirect
+- `generateStaticParams()` in `app/[locale]/page.tsx` (homepage) and `app/[locale]/taas/layout.tsx` (TaaS)
+- `app/sitemap.ts` — `locales` array
+
 ### SEO Infrastructure
 
 All locale pages generate:
@@ -50,6 +58,10 @@ All locale pages generate:
 - Root `/` and `/taas` redirect client-side to the locale-prefixed equivalents
 
 `app/sitemap.ts` and `app/robots.ts` generate the sitemap and robots.txt at build time.
+
+### Analytics & Cookie Consent
+
+`app/[locale]/layout.tsx` injects `<GoogleAnalytics />` and `<IubendaCookies />` into `<head>`. `IubendaPolicies` renders the privacy/cookie policy links (typically in the Footer). Iubenda handles GDPR consent gating.
 
 ### Component Organization
 
@@ -68,7 +80,6 @@ Global styles and CSS custom properties are in `app/globals.css`.
 ### Key Libraries
 
 - **Framer Motion / Motion** — animations throughout the site
-- **COBE** — 3D globe in the Contact section
 - **next-themes** — dark/light mode via class strategy
 - **React Icons / Tabler Icons** — icon sets
 - **`lib/utils.ts`** exports `cn()` — a `clsx` + `tailwind-merge` helper used by existing components
